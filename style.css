@@ -1,0 +1,115 @@
+
+/*-- styling for Nav menu --*/
+.navbar-header.col {
+		padding: 0 !important;
+	}	
+	.navbar {		
+		background: #6245dd;
+		padding-left: 16px;
+		padding-right: 16px;
+		border-bottom: 1px solid #d6d6d6;
+	}
+
+	.navbar .navbar-brand  {
+		 font-family: 'Arvo', serif;
+		font-weight: bold;
+		font-size: 30px;
+		color: #fff;
+	}
+.navbar-nav .nav-link {
+    color: white;
+		font-size: 18px;
+}
+	.navbar-nav{
+		float: right;
+	}
+	.navbar ul.nav li a:hover, .navbar ul.nav li a:focus {
+		color: #f08373 !important;
+	}
+	.navbar ul.nav li.active a, .navbar ul.nav li.active a:hover, .navbar ul.nav li.active a:focus {
+		color: #eb5844 !important;
+		background: transparent !important;
+	}
+	
+	.navbar .nav-item.open > a {
+		background: none !important;
+	}
+
+	.navbar .dropdown-menu li a {
+		color: black;
+		padding: 8px 20px;
+		line-height: normal;
+	}
+
+.navbar-light .navbar-nav .nav-link {
+	 color: white;
+ }
+
+	/* end of navbar stylinh */
+	
+body {
+		background: #e6e6e6;
+	}
+
+main{
+	margin-top:20px;
+	padding-top: 10px;
+}
+
+
+	.accordion .card {
+		border: none;
+		margin-bottom: 2px;
+		border-radius: 0;
+		box-shadow: 0 0 6px rgba(0,0,0,0.2);
+	}
+	.accordion .card .card-header {
+		background: #6245dd;
+		padding-top: 7px;
+		padding-bottom: 7px;
+		border-radius: 0;
+	}
+	.accordion .card-header h2 {
+		color: #fff;
+		font-size: 1rem;
+		font-weight: 500;
+		font-family: "Roboto", sans-serif;
+	}
+	.accordion img {
+		width: 150px;
+	}
+	.accordion .card-header h2 span {
+		float: left;
+		margin-top: 10px;
+	}
+	.accordion .card-header .btn {
+		font-weight: 500;
+	}
+	.accordion .card-header i {
+		color: #fff;
+		font-size: 1.3rem;
+		margin: 0 6px 0 -10px;
+		font-weight: bold;
+		position: relative;
+		top: 5px;
+	}			
+	.accordion .card-header button:hover {
+		color: #23384e;
+	}
+	.accordion .card-body {
+		color: #666;
+	}
+
+/* End of styling for vacation types  */
+
+hr{
+	background-color: red;
+	width: 500px;
+	height: 3px;
+}
+
+/* styling for table head  */
+#table-head{
+		background: #6245dd;
+		color: white;
+}

@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bootstrap Elegant Accordion Widget</title>
+<link href="https://fonts.googleapis.com/css?family=Roboto:400,500|Open+Sans" rel="stylesheet">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"/>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
+<script src="https://kit.fontawesome.com/2a05f92155.js" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="style.css">
+	
+<script>
+	$(document).ready(function(){
+		// Add minus icon for collapse element which is open by default
+		$(".collapse.show").each(function(){
+			$(this).siblings(".card-header").find(".btn i").html("remove");
+		});
+		
+		// Toggle plus minus icon on show hide of collapse element
+		$(".collapse").on('show.bs.collapse', function(){
+			$(this).parent().find(".card-header .btn i").html("remove");
+		}).on('hide.bs.collapse', function(){
+			$(this).parent().find(".card-header .btn i").html("add");
+		});
+	});
+</script>
+</head>
+<body>
+<header>
+
+<nav class="navbar navbar-default navbar-expand-lg navbar-light fixed-top">
+	<div class="navbar-header d-flex col">
+		<a class="navbar-brand" href="#">Explore<b>India</b></a>  		
+		<button type="button" data-target="#navbarCollapse" data-toggle="collapse" class="navbar-toggle navbar-toggler ml-auto">
+			<span class="navbar-toggler-icon"></span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+			</button>
+	</div>
+	<!-- Collection of nav links, forms, and other content for toggling -->
+	<div id="navbarCollapse" class="collapse navbar-collapse justify-content-end">
+		<ul class="nav navbar-nav">
+			<li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+			<li class="nav-item dropdown">
+				<a data-toggle="dropdown" class="nav-link dropdown-toggle" href="#">Services <b class="caret"></b></a>
+				<ul class="dropdown-menu">					
+					<li><a href="#" class="dropdown-item"></a></li>
+					<li><a href="#" class="dropdown-item">Guided Tour</a></li>
+					<li><a href="#" class="dropdown-item">Air Travel</a></li>
+					<li><a href="#" class="dropdown-item">Road Travel</a></li>
+					</ul>
+			</li>
+			<li class="nav-item"><a href="gallery.html" class="nav-link">Gallery</a></li>
+			<li class="nav-item"><a href="things.html" class="nav-link">Things to do</a></li>
+				<li class="nav-item"><a href="faqs.html" class="nav-link">FAQs</a></li>
+					<li class="nav-item"><a href="sign.html" class="nav-link">Sign-In / Sign-Up</a></li>
+			<li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+		</ul>
+	</div>
+</nav>
+</header>
+<!-- vacation typles -->
+<div class="clearfix"></div>
+<main>
+<div class="container">
+	<div class="row">
+		<div class="col-lg-8 offset-lg-2">
+			<div class="accordion mt-5" id="accordionExample">
+				<div class="card">
+					<div class="card-header" id="headingOne">
+						<h2 class="clearfix mb-0">
+							<a class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne"><i class="material-icons">add</i> Adventure based Vacation</a>									
+						</h2>
+					</div>
+					<div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+						<div class="card-body">
+							<div class="media">
+								<img src="https://www.trekthehimalayas.com/Article/wp-content/uploads/2018/03/top10summer.jpg" class="mr-3" alt="Home" height="250px" width="250px">
+								<div class="media-body">
+                    <p>Life itself is an adventure which gives us twists and turns. But what if we actually have adventure trip that gives the real thrill and takes into a whole new world of excitement? High peaks and mountains, fascinating rivers, challenging rivers and getting close to wild animals, India is bestowed with some adventurous locations that are worth experiencing.</p>
+                      <a href="adevnture.html" target="_blank" ><h5 class="mt-0 btn btn-success">Click here to explore</h5></a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="card">
+					<div class="card-header" id="headingTwo">
+						<h2 class="mb-0">
+							<a class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo"><i class="material-icons">add</i> Nature based Vacation</a>
+						</h2>
+					</div>
+					<div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+						<div class="card-body">
+							<div class="media">
+								<img src="https://www.princess.com/images/cruise-tips-vacation-ideas/cruise-destinations/south-pacific-and-tahiti-vacations/comparing-the-value-of-a-hawaii-cruise-to-a-land-based-vacation.jpg" class="mr-3" alt="Home" height="250px" width="250px">
+								<div class="media-body">
+                    <p>Being one with nature brings several benefits to a person's healthy state of mind, body, and spirit. More often than not, a nature trip is simply what it takes to rejuvenate from the tiring and busy city life. Apart from this, a nature trip may just be the adventure that you need.</p>
+                    <a href="https://theculturetrip.com/asia/india/articles/the-most-beautiful-places-for-nature-lovers-in-india/" target="_blank"><h5 class="mt-0 btn btn-success">Click here to Explore</h5></a>
+
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="card">
+					<div class="card-header" id="headingThree">
+						<h2 class="mb-0">
+							<a class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree"><i class="material-icons">add</i>History based Vacation</a>                     
+						</h2>
+					</div>
+					<div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+						<div class="card-body">
+							<div class="media">
+								<img src="https://www.incredibleindia.org/content/dam/incredible-india-v2/images/places/hampi/hampi-vitthala-temple-stone-chariot-1.jpg/jcr:content/renditions/cq5dam.web.256.256.jpeg" class="mr-3" alt="Historic places" height="250px" width="250px">
+								<div class="media-body">
+										Historical places are always bringing a great experience of learning new things.The Taj Mahal, Red Fort, Humayun's Tomb are famous historical monuments of the Mughal period. Champaner, Dholavira and Nalanda are ancient archaeological sites. Glimpses of colonial architecture and The Great Living Chola Temples are another example of India's rich history.</p>
+                    <a href="https://www.holidify.com/collections/historical-places-in-india" target="_blank"><h5 class="mt-0 btn btn-success">Click here to Explore</h5></a>
+
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+</main>
+
+<!- footer-->
+<footer>
+		<ul class="nav navbar-nav navbar-right ml-auto">
+				<li class="nav-item"><a href="#" class="nav-link"><i class="fa fa-facebook"></i></a></li>
+			<li class="nav-item"><a href="#" class="nav-link"><i class="fa fa-twitter"></i></a></li>
+			<li class="nav-item"><a href="#" class="nav-link"><i class="fa fa-google-plus"></i></a></li>
+			<li class="nav-item"><a href="#" class="nav-link"><i class="fa fa-pinterest-p"></i></a></li>
+		</ul>
+</footer>
+</body>
+</html>                            
