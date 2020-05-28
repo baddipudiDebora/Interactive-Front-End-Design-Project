@@ -1,25 +1,54 @@
 html , body{
-	height: 100%;
+  height: 100%;
+}
+/* styling for nav bar */
+.navbar{
+  background-color: gold;
 }
 
-.navbar{
-	background-color: gold;
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
 }
+
+.dropdown-menu a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown:hover .dropdown-menu {display: block;}
+
+
+.navbar a:hover, .dropdown:hover {
+	 background-color: rgb(245, 157, 157);
+   text-decoration: underline;
+}
+
+.responsive {
+  width: 100%;
+  height: auto;
+}
+
 #hero-image{
-    height:600px;
+    height:500px;
     width: 100%;
-    background: url("https://static.parade.com/wp-content/uploads/2019/12/vacation-quote-earl-wilson-parade-1.png") no-repeat center center;
-		background-size: cover;
-     animation-name: hero-zoom;
+    position: relative;
+    padding-top: -200px;
+
+    animation-name: hero-zoom;
     animation-duration: 5s;
     animation-fill-mode: forwards;
 }
-
 #hero-outer{
-    height:600px;
+    height:500px;
     width: 100%;
     overflow:hidden;
-    position: relative;
 }
 
 @keyframes hero-zoom {
@@ -31,26 +60,54 @@ html , body{
     }
 }
 
+@media screen and (max-width: 943px) {
+	#hero-image{
+    height:400px;
+    width: 100%;
+    margin: -200 50 0 50;
+}
+#hero-outer{
+    height:500px;
+    width: 100%;
+  	margin: -200 50 0 50;
+}
+}
+/* 
+@keyframes hero-zoom {
+    from{
+        transform: scale(1);
+    }
+    to{
+        transform: scale(1.1);
+    }
+}
+styling for carasoel  */
+#carouselExampleCaptions h5, p{
+  color: black;
+}
+
+
+
 #beach-image{
     height:600px;
     width: 100%;
     background: url('https://img3.goodfon.com/wallpaper/nbig/4/db/nastroeniya-butylka-pismo.jpg')   center no-repeat;
     background-size: cover;
-	display: flex;
-		align-items: top-center;
+  display: flex;
+    align-items: top-center;
 }
 .homepage-intro-title {
-	color: white;
+  color: white;
     margin-bottom: 0;
     font-size: 4vw;
     line-height: 3vw;
     text-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
-		width: 100%;
+    width: 100%;
 }
 .homepage-intro-subtitle{
 color: white;
     margin-bottom: 0;
     font-size: 2vw;
     line-height: 1vw;
-    text-shadow: 0 0 30px rgba(0, 0, 0, 0.2);	
+    text-shadow: 0 0 30px rgba(0, 0, 0, 0.2); 
 }
