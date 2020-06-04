@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Explore ooty</title>
+<link href="https://fonts.googleapis.com/css?family=Roboto:400,500|Open+Sans" rel="stylesheet">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"/>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
+<script src="https://kit.fontawesome.com/2a05f92155.js" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="style.css">
+<style type="text/css">
+  .city-name, .about-heading, .four-abouts-ooty, h4+p {
+      padding-left:30px;
+  }
+
+.general-sub{
+font-family: "Exo", sans-serif;
+font-weight: 600;
+color:black;
+
+}
+
+footer{
+	background-color: #D3D3D3;
+	color: #B0B0B0;
+	min-height: 75px;
+	margin: 0;
+}
+
+.inline-block{
+	display: bolck;
+}
+
+.cv-pdf i{
+font-size: 18px;
+text-align: center;
+padding-left: 5px;
+color: #fafafa;
+transition: all 0.35s ease-in-out;
+-webkit-transition: all 0.35s ease-in-out;
+-moz-transition: all 0.35s ease-in-out;
+-o-transition: all 0.35s ease-in-out;
+}
+.cv-pdf i:hover{
+color: #e84610;
+}
+.social-links{
+	padding-bottom: 15px;
+}
+
+.social-links li a i{
+	width: 32px;
+	height: 32px;
+	padding: 12px 0;
+	border-radius: 50%;
+	font-size: 13px;
+	line-height: 7px;
+	text-align: center;
+	color: #fafafa;
+	background: #8f8f8f;
+	transition: all 0.35s ease-in-out;
+	-webkit-transition: all 0.35s ease-in-out;
+	-moz-transition: all 0.35s ease-in-out;
+	-o-transition: all 0.35s ease-in-out;
+}
+
+.social-links li a i:hover{
+color: #e84610;
+}
+
+.footer-details{
+	padding: 20px;
+}
+.ooty-img{
+ 			 height: 300px;  /* The height is 400 pixels */
+        width: 100%;  /* The width is the width of the web page */
+
+}
+
+#map {
+        height: 300px;  /* The height is 400 pixels */
+        width: 70%;  /* The width is the width of the web page */
+				padding-left: 20px;
+}
+.ooty-map{
+	padding-left:20px;
+}
+
+</style>
+
+
+</head>
+<body>
+<header>
+  <nav class="navbar navbar-expand-md navbar-light" id="navlist">
+    <div class="container">
+      <button class="navbar-toggler collapsed ml-auto" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarCollapse">
+       <ul class="nav navbar-nav ml-auto">
+          <li class="nav-item"><a href="index.html" class="nav-link" data-toggle="tooltip" title="Home Page!"><i class="fas fa-house-user"></i></a></li>
+          <li class="nav-item dropdown">
+            <a data-toggle="dropdown" class="nav-link dropdown-toggle" href="#" >Trending Tours<b class="caret"></b></a>
+            <ul class="dropdown-menu">          
+                <div class="honymoon_holiday_submenu">
+               
+                                <li><a href="ooty.html" title="Goa Tour Packages">Hill Station -Ooty </a></li> 
+                                <li><a href="ooty.html" title="Gujarat Tour Packages">Historic - ooty </a></li>
+                                <li><a href="ooty.html" title="Himachal Tour Packages">Beach - ooty </a></li> 
+                          
+             					 <li><a href="ladakh.html" title="Ladakh Tour Packages">Adventure -  Ladakh</a></li>
+                </div>  </ul>
+          </li>
+          <li class="nav-item"><a href="faqs.html" class="nav-link" data-toggle="tooltip" title="FAQs"><i class="fas fa-question-circle"></i></a></li>
+          <li class="nav-item"><a href="sign.html" class="nav-link">Sign-In / Sign-Up</a></li>
+          <li class="nav-item"><a href="wheresHotWhen.html" class="nav-link" onclick="displayDate()" id="demo">Wheather Guide</a></li>
+       </ul>
+
+      </div>
+    </div>
+  </nav>
+</header>
+ 
+  <section>
+     <div class="row">
+            <div class="col-md-4 city-name section-column">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h3 class="city-heading uppercase">ooty</h3>
+												<img src="https://i2.wp.com/cheerfultrails.com/wp-content/uploads/2018/12/itinerarypin.jpg?resize=564%2C385&ssl=1" class="ooty-img responsive" alt="ooty - capital of India" />
+                    </div>
+                </div>
+              
+            </div>
+            <div class="col-md-8 bg-color-groups section-column">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h3 class="about-heading uppercase">All about ooty and around</h3>
+												<p class="about-ooty">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                    </div>
+                </div>
+            </div>
+     </div>
+        <div class="row">
+                    <div class="col-xs-10 col-xs-offset-1 col-sm-offset-0 col-sm-4 col-md-6">
+                        <div class="row ooty-map">
+                            <div class="col-xs-10 col-sm-10 ooty-map">
+                                <h4 class="four-abouts-ooty uppercase">ooty Location</h4>
+                                 <div id="map"></div>
+                            </div>
+                        </div>
+                    </div>
+								     <div class="col-xs-10 col-xs-offset-1 col-sm-offset-0 col-sm-4 col-md-6">
+                        <div class="row">
+                            <div class="col-xs-10 col-sm-10">
+                                <h4 class="four-abouts-ooty uppercase">Short Video</h4>
+                                <p>
+                                 Short Video about ooty and Agra
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+			       <div class="row">
+                  <div class="col-xs-10 col-xs-offset-1 col-sm-offset-0 col-sm-4 col-md-4">
+                                <h4 class="four-abouts-ooty uppercase">Places to visit</h4>
+                                <p>
+                                  Top tourist attractions -  with a link to google places
+                              </p>
+                  </div>
+            		  <div class="col-xs-10 col-xs-offset-1 col-sm-offset-0 col-sm-4 col-md-4">
+                                <h4 class="four-abouts-ooty uppercase">ooty weather report </h4>
+                                <p>
+                                 Weather report of ooty and info when is the best time to visit.
+                                 </p>
+                  </div>
+                  <div class="col-xs-10 col-xs-offset-1 col-sm-offset-0 col-sm-4 col-md-4">
+                              <h4 class="four-abouts-ooty uppercase">Accomodations and Restuarents</h4>
+                                <p>
+                                      Top hotels and restuarents                         
+                                </p>
+                            </div>
+				           </div>
+      </section>
+    		<footer class="container-fluid">
+			<div id="footer-details" class="row">
+				<div class="col-sm-4">
+					<h4 class="uppercase general-sub">About</h4>
+					<p class="inline-block footertext">Travel Agent since more than a decade, helped thousands of travellers cherish a safe and wonderful holiday.</p>
+				</div>
+				<div class="col-sm-4">
+						<h4 class="uppercase general-sub">Download</h4>
+							<p class="inline-block footertext"> Need our Travel brocher? Download here.<a href="#" target="_blank" class="cv-pdf"><i class="fa fa-download" aria-hidden="true"></i><span class="sr-only">Download link.</span></a></p>
+				</div>
+				<div class="col-sm-4">
+						<h4 class="uppercase general-sub">Social</h4>
+						<ul class="list-inline social-links">
+							<li class="list-inline-item">
+								<a target="_blank" href="#">
+									<i class="fa fa-facebook" aria-hidden="true"></i>
+									<span class="sr-only">FaceBook</span>
+								</a>
+							</li>
+							 <li class="list-inline-item">
+                        <a target="_blank" href="#">
+                            <i class="fa fa-twitter" aria-hidden="true"></i>
+                            <span class="sr-only">Twitter</span>
+                        </a>
+                </li>
+															<li class="list-inline-item">
+								<a target="_blank" href="#">
+									<i class="fa fa-linkedin" aria-hidden="true"></i>
+									<span class="sr-only">Linkedin</span>
+								</a>
+							</li>
+							 <li class="list-inline-item">
+                        <a target="_blank" href="#">
+                            <i class="fa fa-pinterest" aria-hidden="true"></i>
+                            <span class="sr-only">Pinterest</span>
+                        </a>
+                </li>
+								<li class="list-inline-item">
+									<a target="_blank" href="#">
+										<i class="fa fa-instagram" aria-hidden="true"></i>
+										<span class="sr-only">Instagram</span>
+								</a>
+							</li>
+							<li class="list-inline-item">
+									<a target="_blank" href="#">
+										<i class="fa fa-youtube" aria-hidden="true"></i>
+										<span class="sr-only">YouTube</span>
+								</a>
+							</li>
+						</ul>
+				</div>
+			</div>
+		</footer>
+  <script>
+// Initialize and add the map
+function initMap() {
+  var ooty = {lat:11.410000, lng:76.699997};
+	var chhindwara = {lat:22.057163 , lng:78.938202 };
+  var map = new google.maps.Map(
+      document.getElementById('map'), {zoom: 4, center: chhindwara});
+   var marker = new google.maps.Marker({position: ooty, map: map});
+}
+    </script>
+    <!--Load the API from the specified URL
+    * The async attribute allows the browser to render the page while the API loads
+    * The key parameter will contain your own API key (which is not needed for this tutorial)
+    * The callback parameter executes the initMap() function
+    -->
+		<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+		<script>
+  
+var xhr = new XMLHttpRequest();
+var data;
+
+xhr.open("GET", "https://api.openweathermap.org/data/2.5/weather?q=ooty&APPID=08186312a5a64c7bc1c004cd32050ebf&units=metric");
+
+xhr.send();
+
+xhr.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+        data = JSON.parse(this.responseText);
+    };
+}
+
+setTimeout(function() {
+    console.log(data);
+}, 500);
+
+var settings = {
+	"async": true,
+	"crossDomain": true,
+	"url": "https://hotels4.p.rapidapi.com/locations/search?locale=en_US&query=new%20ooty",
+	"method": "GET",
+	"headers": {
+		"x-rapidapi-host": "hotels4.p.rapidapi.com",
+		"x-rapidapi-key": "3b4fcf3834msh88345f9e9a24985p1e68b7jsnf5d6a8d704df"
+	}
+}
+
+$.ajax(settings).done(function (response) {
+	console.log(response);
+});
+</script>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCplBZ7saev3abj_d5Ay4LGwueQMOY-wOM&callback=initMap">
+    </script>
+  </body>
+</html>

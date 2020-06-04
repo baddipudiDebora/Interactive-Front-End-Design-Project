@@ -120,19 +120,8 @@ input {
     animation: show 0.6s;
 }
 
-@keyframes show {
-    0%,
-    49.99% {
-        opacity: 0;
-        z-index: 1;
-    }
 
-    50%,
-    100% {
-        opacity: 1;
-        z-index: 5;
-    }
-}
+
 .overlay-container {
     position: absolute;
     top: 0;
@@ -227,37 +216,35 @@ input {
 </head>
 <body>
 <header>
-<nav class="navbar navbar-default navbar-expand-lg navbar-light">
-	<div class="navbar-header d-flex col">
-		<a class="navbar-brand" href="#">Explore<b>India</b></a>  		
-		<button type="button" data-target="#navbarCollapse" data-toggle="collapse" class="navbar-toggle navbar-toggler ml-auto">
-			<span class="navbar-toggler-icon"></span>
-			<span class="icon-bar"></span>
-			<span class="icon-bar"></span>
-			<span class="icon-bar"></span>
-		</button>
-	</div>
-	<!-- Collection of nav links, forms, and other content for toggling -->
-	<div id="navbarCollapse" class="collapse navbar-collapse justify-content-start">
-		<ul class="nav navbar-nav">
-			<li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
-			<li class="nav-item dropdown">
-				<a data-toggle="dropdown" class="nav-link dropdown-toggle" href="#">Services <b class="caret"></b></a>
-				<ul class="dropdown-menu">					
-					<li><a href="#" class="dropdown-item"></a></li>
-					<li><a href="#" class="dropdown-item">Guided Tour</a></li>
-					<li><a href="#" class="dropdown-item">Air Travel</a></li>
-					<li><a href="#" class="dropdown-item">Road Travel</a></li>
-					</ul>
-			</li>
-			<li class="nav-item"><a href="gallery.html" class="nav-link">Gallery</a></li>
-			<li class="nav-item"><a href="things.html" class="nav-link">Things to do</a></li>
-				<li class="nav-item"><a href="faqs.html" class="nav-link">FAQs</a></li>
-					<li class="nav-item"><a href="sign.html" class="nav-link">Sign-In / Sign-Up</a></li>
-			<li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
-		</ul>
-	</div>
-</nav>
+  <nav class="navbar navbar-expand-md navbar-light" id="navlist">
+    <div class="container">
+      <button class="navbar-toggler collapsed ml-auto" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarCollapse">
+       <ul class="nav navbar-nav ml-auto">
+          <li class="nav-item"><a href="index.html" class="nav-link" data-toggle="tooltip" title="Home Page!" onmouseover="MouseOver(this);" onmouseout="MouseOut(this);"><i class="fas fa-house-user"></i></a></li>
+          <li class="nav-item dropdown">
+            <a data-toggle="dropdown" class="nav-link dropdown-toggle" href="#" >Trending Tours<b class="caret"></b></a>
+            <ul class="dropdown-menu">          
+                <div class="honymoon_holiday_submenu">
+               
+                                <li><a href="/holidays/india-tour-packages/goa-tour-packages" title="Goa Tour Packages">Hill Station -Ooty </a></li> 
+                                <li><a href="/holidays/india-tour-packages/gujarat-tour-packages" title="Gujarat Tour Packages">Historic - Delhi </a></li>
+                                <li><a href="/holidays/india-tour-packages/himachal-pradesh-tour-packages" title="Himachal Tour Packages">Beach - Kanyakumari </a></li> 
+                          
+             					 <li><a href="/holidays/india-tour-packages/ladakh-tour-packages" title="Ladakh Tour Packages">Adventure -  Ladakh</a></li>
+                </div>     </ul>
+          </li>
+          <li class="nav-item"><a href="faqs.html" class="nav-link"data-toggle="tooltip" title="FAQs"><i class="fas fa-question-circle"></i></a></li>
+          <li class="nav-item"><a href="sign.html" class="nav-link">Sign-In / Sign-Up</a></li>
+          <li class="nav-item"><a href="wheresHotWhen.html" class="nav-link "onclick="displayDate()" id="demo">Wheather Guide</a></li>
+       </ul>
+
+      </div>
+    </div>
+  </nav>
+<section class="alert alert-info alert-dismissible fade show mb-0 text-center" role="alert"><div class="container">The WHO has classified Coronavirus (CO-VID-19) as a global pandemic.  Check the <a href="https://travel.gc.ca/travelling/advisories" target="_blank" class="alert-link" data-toggle="tooltip" title="Please check here for more info !">Foreign and Commonwealth Office</a> for the latest travel advice.<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">x</span></button></div></section>
 </header>
  <div class="container mt-5" id="container">
     <div class="form-container sign-up-container mt-2">
