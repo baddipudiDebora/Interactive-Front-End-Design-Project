@@ -251,9 +251,8 @@ color: #e84610;
 // Initialize and add the map
 function initMap() {
   var delhi = {lat:28.644800, lng:77.216721};
-	var chhindwara = {lat:22.057163 , lng:78.938202 };
   var map = new google.maps.Map(
-      document.getElementById('map'), {zoom: 4, center: chhindwara});
+      document.getElementById('map'), {zoom: 4, center: delhi});
    var marker = new google.maps.Marker({position: delhi, map: map});
 }
     </script>
