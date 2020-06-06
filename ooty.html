@@ -112,8 +112,8 @@ color: #e84610;
                 <div class="honymoon_holiday_submenu">
                
                                 <li><a href="ooty.html" title="Goa Tour Packages">Hill Station -Ooty </a></li> 
-                                <li><a href="ooty.html" title="Gujarat Tour Packages">Historic - ooty </a></li>
-                                <li><a href="ooty.html" title="Himachal Tour Packages">Beach - ooty </a></li> 
+                                <li><a href="delhi.html" title="Gujarat Tour Packages">Historic - Delhi </a></li>
+                                <li><a href="Kanyakumari.html" title="Himachal Tour Packages">Beach - Kanyakumari </a></li> 
                           
              					 <li><a href="ladakh.html" title="Ladakh Tour Packages">Adventure -  Ladakh</a></li>
                 </div>  </ul>
@@ -177,9 +177,14 @@ color: #e84610;
                   </div>
             		  <div class="col-xs-10 col-xs-offset-1 col-sm-offset-0 col-sm-4 col-md-4">
                                 <h4 class="four-abouts-ooty uppercase">ooty weather report </h4>
-                                <p>
-                                 Weather report of ooty and info when is the best time to visit.
-                                 </p>
+                               	<div class="weatherdata">
+																<div id="weatherdata" onload="fetchWeatherData()"></div>
+																<div id="temp-data"></div>
+																<div id="feelslike-data"></div>
+																<div id="temp_max-data"></div>
+																<div id="temp_min-data"></div>
+																<div id="wind_speed-data"></div>	
+																</div>
                   </div>
                   <div class="col-xs-10 col-xs-offset-1 col-sm-offset-0 col-sm-4 col-md-4">
                               <h4 class="four-abouts-ooty uppercase">Accomodations and Restuarents</h4>
@@ -274,8 +279,12 @@ xhr.onreadystatechange = function() {
 }
 
 setTimeout(function() {
-    console.log(data);
-}, 500);
+				document.getElementById("temp-data").innerHTML =`<h6>Lei, Ladahk temp in celsius today is ${data.main.temp}</h6>` ;
+			document.getElementById("feelslike-data").innerHTML =`<h6>Feels like ${data.main.feels_like}</h6>` ;
+			document.getElementById("temp_max-data").innerHTML =`<h6>Max temp today is ${data.main.temp_max}</h6>` ;
+			document.getElementById("temp_min-data").innerHTML =`<h6>Min temp  today is ${data.main.temp_min}</h6>` ;
+			document.getElementById("wind_speed-data").innerHTML =`<h6>Wind Speed today is ${data.wind.speed}</h6>` ;	
+			}, 500);
 
 var settings = {
 	"async": true,

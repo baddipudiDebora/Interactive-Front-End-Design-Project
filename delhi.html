@@ -176,10 +176,15 @@ color: #e84610;
                               </p>
                   </div>
             		  <div class="col-xs-10 col-xs-offset-1 col-sm-offset-0 col-sm-4 col-md-4">
-                                <h4 class="four-abouts-delhi uppercase">Delhi weather report </h4>
-                                <p>
-                                 Weather report of delhi and info when is the best time to visit.
-                                 </p>
+                        <h4 class="four-abouts-delhi uppercase">Delhi weather report </h4>
+													<div id="weatherdata" onload="fetchWeatherData()"></div>
+													<div class="weatherdata">
+													<div id="temp-data"></div>
+													<div id="feelslike-data"></div>
+													<div id="temp_max-data"></div>
+													<div id="temp_min-data"></div>
+													<div id="wind_speed-data"></div>
+															</div>
                   </div>
                   <div class="col-xs-10 col-xs-offset-1 col-sm-offset-0 col-sm-4 col-md-4">
                               <h4 class="four-abouts-delhi uppercase">Accomodations and Restuarents</h4>
@@ -252,46 +257,36 @@ function initMap() {
    var marker = new google.maps.Marker({position: delhi, map: map});
 }
     </script>
-    <!--Load the API from the specified URL
+
+<script>
+  		var xhr = new XMLHttpRequest();
+			var data;
+
+			xhr.open("GET", "https://api.openweathermap.org/data/2.5/weather?q=delhi&APPID=08186312a5a64c7bc1c004cd32050ebf&units=metric");
+
+			xhr.send();
+
+			xhr.onreadystatechange = function() {
+					if (this.readyState == 4 && this.status == 200) {
+							data = JSON.parse(this.responseText);
+					};
+			}
+				setTimeout(function() {
+				document.getElementById("temp-data").innerHTML =`<h6>Delhi temp in celsius today is ${data.main.temp}</h6>` ;
+			document.getElementById("feelslike-data").innerHTML =`<h6>Feels like ${data.main.feels_like}</h6>` ;
+			document.getElementById("temp_max-data").innerHTML =`<h6>Max temp today is ${data.main.temp_max}</h6>` ;
+			document.getElementById("temp_min-data").innerHTML =`<h6>Min temp  today is ${data.main.temp_min}</h6>` ;
+			document.getElementById("wind_speed-data").innerHTML =`<h6>Wind Speed today is ${data.wind.speed}</h6>` ;	
+			}, 500);
+	</script>
+	
+
+	<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+		    <!--Load the API from the specified URL
     * The async attribute allows the browser to render the page while the API loads
     * The key parameter will contain your own API key (which is not needed for this tutorial)
     * The callback parameter executes the initMap() function
     -->
-		<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-		<script>
-  
-var xhr = new XMLHttpRequest();
-var data;
-
-xhr.open("GET", "https://api.openweathermap.org/data/2.5/weather?q=delhi&APPID=08186312a5a64c7bc1c004cd32050ebf&units=metric");
-
-xhr.send();
-
-xhr.onreadystatechange = function() {
-    if (this.readyState == 4 && this.status == 200) {
-        data = JSON.parse(this.responseText);
-    };
-}
-
-setTimeout(function() {
-    console.log(data);
-}, 500);
-
-var settings = {
-	"async": true,
-	"crossDomain": true,
-	"url": "https://hotels4.p.rapidapi.com/locations/search?locale=en_US&query=new%20delhi",
-	"method": "GET",
-	"headers": {
-		"x-rapidapi-host": "hotels4.p.rapidapi.com",
-		"x-rapidapi-key": "3b4fcf3834msh88345f9e9a24985p1e68b7jsnf5d6a8d704df"
-	}
-}
-
-$.ajax(settings).done(function (response) {
-	console.log(response);
-});
-</script>
     <script async defer
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCplBZ7saev3abj_d5Ay4LGwueQMOY-wOM&callback=initMap">
     </script>

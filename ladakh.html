@@ -16,7 +16,7 @@
 <link rel="stylesheet" href="style.css">
 <style type="text/css">
   .city-name, .about-heading, .four-abouts-ladakh, h4+p {
-      padding-left:30px;
+      padding-left:20px;
   }
 
 .general-sub{
@@ -31,6 +31,9 @@ footer{
 	color: #B0B0B0;
 	min-height: 75px;
 	margin: 0;
+}
+footer p{
+	padding-left:0;
 }
 
 .inline-block{
@@ -80,7 +83,7 @@ color: #e84610;
 .ladakh-img{
  			 height: 300px;  /* The height is 400 pixels */
         width: 100%;  /* The width is the width of the web page */
-
+		padding-left: 20px;
 }
 
 #map {
@@ -110,12 +113,10 @@ color: #e84610;
             <a data-toggle="dropdown" class="nav-link dropdown-toggle" href="#" >Trending Tours<b class="caret"></b></a>
             <ul class="dropdown-menu">          
                 <div class="honymoon_holiday_submenu">
-               
-                                <li><a href="ladakh.html" title="Goa Tour Packages">Hill Station -ladakh </a></li> 
-                                <li><a href="ladakh.html" title="Gujarat Tour Packages">Historic - ladakh </a></li>
-                                <li><a href="ladakh.html" title="Himachal Tour Packages">Beach - ladakh </a></li> 
-                          
-             					 <li><a href="ladakh.html" title="Ladakh Tour Packages">Adventure -  Ladakh</a></li>
+                    <li><a href="ooty.html" title="Goa Tour Packages">Hill Station - Ooty </a></li> 
+                    <li><a href="delhi.html" title="Gujarat Tour Packages">Historic - Delhi </a></li>
+                    <li><a href="Kanyakumari.html" title="Himachal Tour Packages">Beach - Kanyakumari</a></li> 
+                   <li><a href="ladakh.html" title="Ladakh Tour Packages">Adventure - Ladakh</a></li>
                 </div>  </ul>
           </li>
           <li class="nav-item"><a href="faqs.html" class="nav-link" data-toggle="tooltip" title="FAQs"><i class="fas fa-question-circle"></i></a></li>
@@ -177,9 +178,12 @@ color: #e84610;
                   </div>
             		  <div class="col-xs-10 col-xs-offset-1 col-sm-offset-0 col-sm-4 col-md-4">
                                 <h4 class="four-abouts-ladakh uppercase">ladakh weather report </h4>
-                                <p>
-                                 Weather report of ladakh and info when is the best time to visit.
-                                 </p>
+                               	<div id="weatherdata" onload="fetchWeatherData()"></div>
+																<div id="temp-data"></div>
+																<div id="feelslike-data"></div>
+																<div id="temp_max-data"></div>
+																<div id="temp_min-data"></div>
+																<div id="wind_speed-data"></div>	
                   </div>
                   <div class="col-xs-10 col-xs-offset-1 col-sm-offset-0 col-sm-4 col-md-4">
                               <h4 class="four-abouts-ladakh uppercase">Accomodations and Restuarents</h4>
@@ -263,10 +267,9 @@ function initMap() {
 var xhr = new XMLHttpRequest();
 var data;
 
-xhr.open("GET", "https://api.openweathermap.org/data/2.5/weather?q=ladakh&APPID=08186312a5a64c7bc1c004cd32050ebf&units=metric");
+xhr.open("GET", "https://api.openweathermap.org/data/2.5/weather?q=lei&APPID=08186312a5a64c7bc1c004cd32050ebf&units=metric");
 
 xhr.send();
-
 xhr.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
         data = JSON.parse(this.responseText);
@@ -274,8 +277,12 @@ xhr.onreadystatechange = function() {
 }
 
 setTimeout(function() {
-    console.log(data);
-}, 500);
+				document.getElementById("temp-data").innerHTML =`<h6>Lei, Ladahk temp in celsius today is ${data.main.temp}</h6>` ;
+			document.getElementById("feelslike-data").innerHTML =`<h6>Feels like ${data.main.feels_like}</h6>` ;
+			document.getElementById("temp_max-data").innerHTML =`<h6>Max temp today is ${data.main.temp_max}</h6>` ;
+			document.getElementById("temp_min-data").innerHTML =`<h6>Min temp  today is ${data.main.temp_min}</h6>` ;
+			document.getElementById("wind_speed-data").innerHTML =`<h6>Wind Speed today is ${data.wind.speed}</h6>` ;	
+			}, 500);
 
 var settings = {
 	"async": true,
