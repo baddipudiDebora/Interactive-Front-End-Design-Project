@@ -1,4 +1,4 @@
-   <!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="utf-8">
@@ -19,21 +19,16 @@
 	$(document).ready(function(){
   alert("All bookigns till july 1st are freezed");
  });
- var width=100;
- var difference = 2;
- var intervalID = 0;
- function increase(){
-	 intervalID = setInterval(zoomIn,20);
- }
-function zoomIn(){
-	if (width<200){
-		width = width+difference;
-		document.getElementById("hero-image").style.width=width;
-	}
-	else{
-		clearInterval(intervalID);
-	}
-}
+ $(document).ready(function(){
+          $("#hero-outer")
+            .animate({width: "300px"})
+            .animate({height: "300px"})
+            .animate({marginLeft: "150px"})
+            .animate({borderWidth: "10px"})
+            .animate({opacity: 0.5});
+    });
+
+ 
 
 
 </script>
@@ -129,7 +124,4 @@ function zoomIn(){
     </ul>
 </footer>
 </body>
-</html>                            
-
-
-
+</html>  

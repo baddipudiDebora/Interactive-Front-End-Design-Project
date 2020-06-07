@@ -24,26 +24,16 @@ html , body{
 
 .dropdown:hover .dropdown-menu {display: block;}
 
-
 .navbar a:hover, .dropdown:hover {
 	 background-color: rgb(245, 157, 157);
    text-decoration: underline;
 }
 
-.responsive {
-  width: 100%;
-  height: auto;
-}
-
 #hero-image{
     height:500px;
     width: 100%;
-    position: relative;
-    padding-top: -200px;
+    
 
-    animation-name: hero-zoom;
-    animation-duration: 5s;
-    animation-fill-mode: forwards;
 }
 #hero-outer{
     height:500px;
@@ -51,14 +41,6 @@ html , body{
     overflow:hidden;
 }
 
-@keyframes hero-zoom {
-    from{
-        transform: scale(1);
-    }
-    to{
-        transform: scale(1.1);
-    }
-}
 
 @media screen and (max-width: 943px) {
 	#hero-image{
@@ -70,9 +52,6 @@ html , body{
     height:500px;
     width: 100%;
   	margin: -200 50 0 50;
-}
-.about-delhi{
-	padding-left: 20px;
 }
 }
 /* 
@@ -88,9 +67,6 @@ styling for carasoel  */
 #carouselExampleCaptions h5, p{
   color: black;
 }
-
-
-
 #beach-image{
     height:600px;
     width: 100%;
@@ -113,4 +89,97 @@ color: white;
     font-size: 2vw;
     line-height: 1vw;
     text-shadow: 0 0 30px rgba(0, 0, 0, 0.2); 
+}
+/* loacation pages css properties  */
+/* to have spacing between sections*/
+.section-new{
+	margin:0px;
+}
+
+.city-name {
+      padding-left:30px;
+}
+.responsive-video, .responsive-img{
+  width: 90%;
+  height:70%;
+}
+
+.city-img{
+ height: 300px;  /* The height is 300 pixels */
+ width: 85%;  /* The width is the width of the web page */
+}
+/* outer div container of the map */
+.city-map{
+  padding-left:20px;
+}
+/* map element */
+#map {
+  height: 300px;  /* The height is 300 pixels */
+  width: 100%;  /* The width is the width of the web page */
+}
+
+.city-video{
+	height:400px;
+	padding-right:0px;
+}
+.city-weather{
+	padding-left:0px;
+}
+li{
+	text-decoration:none;
+}
+
+
+@media screen and (max-width: 943px) {
+.about-heading{
+padding-left: 20px;
+}
+}
+
+/* footer styling */
+footer{
+	background-color: #9dd3ec;
+	min-height: 75px;
+	margin: 0;
+}
+
+.inline-block{
+	display: bolck;
+}
+
+.cv-pdf i{
+font-size: 18px;
+text-align: center;
+padding-left: 5px;
+color: #fafafa;
+transition: all 0.35s ease-in-out;
+-webkit-transition: all 0.35s ease-in-out;
+-moz-transition: all 0.35s ease-in-out;
+-o-transition: all 0.35s ease-in-out;
+}
+.cv-pdf i:hover{
+color: #e84610;
+}
+.social-links{
+	padding-bottom: 15px;
+}
+
+.social-links li a i{
+	width: 32px;
+	height: 32px;
+	padding: 12px 0;
+	border-radius: 50%;
+	font-size: 13px;
+	line-height: 7px;
+	text-align: center;
+	color: #fafafa;
+	background: #8f8f8f;
+	transition: all 0.35s ease-in-out;
+	-webkit-transition: all 0.35s ease-in-out;
+	-moz-transition: all 0.35s ease-in-out;
+	-o-transition: all 0.35s ease-in-out;
+}
+
+.social-links li a i:hover{
+color: #e84610;
 }

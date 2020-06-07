@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Explore kanyakumari</title>
+<title>Explore Kanyakumari</title>
 <link href="https://fonts.googleapis.com/css?family=Roboto:400,500|Open+Sans" rel="stylesheet">
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"/>
@@ -14,86 +14,6 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
 <script src="https://kit.fontawesome.com/2a05f92155.js" crossorigin="anonymous"></script>
 <link rel="stylesheet" href="style.css">
-<style type="text/css">
-  .city-name, .about-heading, .four-abouts-kanyakumari, h4+p {
-      padding-left:30px;
-  }
-
-.general-sub{
-font-family: "Exo", sans-serif;
-font-weight: 600;
-color:black;
-
-}
-
-footer{
-	background-color: #D3D3D3;
-	color: #B0B0B0;
-	min-height: 75px;
-	margin: 0;
-}
-
-.inline-block{
-	display: bolck;
-}
-
-.cv-pdf i{
-font-size: 18px;
-text-align: center;
-padding-left: 5px;
-color: #fafafa;
-transition: all 0.35s ease-in-out;
--webkit-transition: all 0.35s ease-in-out;
--moz-transition: all 0.35s ease-in-out;
--o-transition: all 0.35s ease-in-out;
-}
-.cv-pdf i:hover{
-color: #e84610;
-}
-.social-links{
-	padding-bottom: 15px;
-}
-
-.social-links li a i{
-	width: 32px;
-	height: 32px;
-	padding: 12px 0;
-	border-radius: 50%;
-	font-size: 13px;
-	line-height: 7px;
-	text-align: center;
-	color: #fafafa;
-	background: #8f8f8f;
-	transition: all 0.35s ease-in-out;
-	-webkit-transition: all 0.35s ease-in-out;
-	-moz-transition: all 0.35s ease-in-out;
-	-o-transition: all 0.35s ease-in-out;
-}
-
-.social-links li a i:hover{
-color: #e84610;
-}
-
-.footer-details{
-	padding: 20px;
-}
-.kanyakumari-img{
- 			 height: 300px;  /* The height is 400 pixels */
-        width: 100%;  /* The width is the width of the web page */
-
-}
-
-#map {
-        height: 300px;  /* The height is 400 pixels */
-        width: 70%;  /* The width is the width of the web page */
-				padding-left: 20px;
-}
-.kanyakumari-map{
-	padding-left:20px;
-}
-
-</style>
-
 </head>
 <body>
 <header>
@@ -104,41 +24,40 @@ color: #e84610;
       </button>
       <div class="collapse navbar-collapse justify-content-end" id="navbarCollapse">
        <ul class="nav navbar-nav ml-auto">
-          <li class="nav-item"><a href="index.html" class="nav-link" data-toggle="tooltip" title="Home Page!"><i class="fas fa-house-user"></i></a></li>
+          <li class="nav-item"><a href="index.html" class="nav-link" data-toggle="tooltip" title="Home Page!" onmouseover="MouseOver(this);" onmouseout="MouseOut(this);"><i class="fas fa-house-user"></i></a></li>
           <li class="nav-item dropdown">
             <a data-toggle="dropdown" class="nav-link dropdown-toggle" href="#" >Trending Tours<b class="caret"></b></a>
             <ul class="dropdown-menu">          
                 <div class="honymoon_holiday_submenu">
-               
+                <div class="mega_menu_header_titles mega_menu_header_titles_no_top"></div>
                                 <li><a href="ooty.html" title="Goa Tour Packages">Hill Station -Ooty </a></li> 
                                 <li><a href="delhi.html" title="Gujarat Tour Packages">Historic - Delhi </a></li>
                                 <li><a href="kanyakumari.html" title="Himachal Tour Packages">Beach - Kanyakumari </a></li> 
                           
-             					 <li><a href="ladakh.html" title="Ladakh Tour Packages">Adventure -  Ladakh</a></li>
+                       <li><a href="ladakh.html" title="Ladakh Tour Packages">Adventure -  Ladakh</a></li>
                 </div>  </ul>
           </li>
           <li class="nav-item"><a href="faqs.html" class="nav-link" data-toggle="tooltip" title="FAQs"><i class="fas fa-question-circle"></i></a></li>
-          <li class="nav-item"><a href="sign.html" class="nav-link">Sign-In / Sign-Up</a></li>
-          <li class="nav-item"><a href="wheresHotWhen.html" class="nav-link" onclick="displayDate()" id="demo">Wheather Guide</a></li>
+          <li class="nav-item"><a href="contactus.html" class="nav-link">Contact Us</a></li>
+                    <li class="nav-item"><a href="sign.html" class="nav-link">Sign-In</a></li>
+          <li class="nav-item"><a href="weatherguide.html" class="nav-link">Wheather Guide</a></li>
        </ul>
 
       </div>
     </div>
   </nav>
 </header>
- 
   <section>
-     <div class="row">
-            <div class="col-md-4 city-name section-column">
-                <div class="row">
-                    <div class="col-md-12">
+     <div class="row section-new">
+		  	<div class="col-md-4 city-img">
+					<div class="row">
+						<div class="col-md-12">
                         <h3 class="city-heading uppercase">kanyakumari</h3>
 												<img src="https://cdn141.picsart.com/310286993138201.jpg?type=webp&to=crop&r=256" class="kanyakumari-img responsive" alt="kanyakumari - capital of India" />
                     </div>
                 </div>
-              
             </div>
-            <div class="col-md-8 bg-color-groups section-column">
+              <div class="col-md-8 about-heading">
                 <div class="row">
                     <div class="col-md-12">
                         <h3 class="about-heading uppercase">All about kanyakumari and around</h3>
@@ -147,105 +66,92 @@ color: #e84610;
                 </div>
             </div>
      </div>
-        <div class="row">
-                    <div class="col-xs-10 col-xs-offset-1 col-sm-offset-0 col-sm-4 col-md-6">
-                        <div class="row kanyakumari-map">
-                            <div class="col-xs-10 col-sm-10 kanyakumari-map">
-                                <h4 class="four-abouts-kanyakumari uppercase">kanyakumari Location</h4>
-                                 <div id="map"></div>
-                            </div>
-                        </div>
-                    </div>
-								     <div class="col-xs-10 col-xs-offset-1 col-sm-offset-0 col-sm-4 col-md-6">
-                        <div class="row">
-                            <div class="col-xs-10 col-sm-10">
-                                <h4 class="four-abouts-kanyakumari uppercase">Short Video</h4>
-                                <p>
-                                 Short Video about kanyakumari and Agra
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-            </div>
-			       <div class="row">
-                  <div class="col-xs-10 col-xs-offset-1 col-sm-offset-0 col-sm-4 col-md-4">
-                                <h4 class="four-abouts-kanyakumari uppercase">Places to visit</h4>
-                                <p>
-                                  Top tourist attractions -  with a link to google places
-                              </p>
+ <div class="row section-new">
+            <div class="col-md-3 city-map">
+               <h4 class="title">Location</h4>
+                   <div id="map"></div>
+             </div>
+               <div class="col-md-7 city-video">
+								 		<h4 class="title">A short glimps of the City </h4>
+                               <iframe class="responsive-video" src="https://www.youtube.com/embed/sQIL9yTDmNw?autoplay=1"></iframe>
+               </div>
+							<div class="col-md-2 city-weather">
+							     <h4 class="title">Weather: </h4>
+									 <br>
+									        <div id="weatherdata" onload="fetchWeatherData()"></div>
+                          <div class="weatherdata">
+                            <div id="temp-data"></div>
+                            <div id="feelslike-data"></div>
+                            <div id="temp_max-data"></div>
+                            <div id="temp_min-data"></div>
+                            <div id="wind_speed-data"></div>
+                          </div>
+							</div>
+				</div>        
+				<div class="row botton-sec section-new">
+                 <div class="col-md-3">
+                    <h4 class="title">Places to visit</h4>
+                     <p>Top tourist attractions -  with a link to google places</p>
                   </div>
-            		  <div class="col-xs-10 col-xs-offset-1 col-sm-offset-0 col-sm-4 col-md-4">
-                          <h4 class="four-abouts-kanyakumari uppercase">kanyakumari weather report </h4>
-													<div class="weatherdata">
-                      		<div id="weatherdata" onload="fetchWeatherData()"></div>
-													<div id="temp-data"></div>
-													<div id="feelslike-data"></div>
-													<div id="temp_max-data"></div>
-													<div id="temp_min-data"></div>
-													<div id="wind_speed-data"></div>	
-													</div>
-                  </div>
-                  <div class="col-xs-10 col-xs-offset-1 col-sm-offset-0 col-sm-4 col-md-4">
-                              <h4 class="four-abouts-kanyakumari uppercase">Accomodations and Restuarents</h4>
-                                <p>
-                                      Top hotels and restuarents                         
-                                </p>
-                            </div>
-				           </div>
+                 <div class="col-md-6">
+                  <h4 class="title">Best Accomodations</h4>                        
+                 </div>
+	                 <div class="col-md-3">
+                   <h4 class="title">Foods <small class="text-muted">to try in Delhi</small></h4>
+                   <ul>
+                    <li>Chaat</li> 
+                   <li>Momos</li> 
+                   <li>Pakodas</li> 
+                   <li>Chola Bhatura</li> 
+                   <li>Kebabs</li> 
+                   <li>Paranthas</li> 
+                   <li>Daal Makhani</li>
+                   </ul>
+                 </div>
+              </div>
       </section>
-    		<footer class="container-fluid">
-			<div id="footer-details" class="row">
-				<div class="col-sm-4">
-					<h4 class="uppercase general-sub">About</h4>
-					<p class="inline-block footertext">Travel Agent since more than a decade, helped thousands of travellers cherish a safe and wonderful holiday.</p>
-				</div>
-				<div class="col-sm-4">
-						<h4 class="uppercase general-sub">Download</h4>
-							<p class="inline-block footertext"> Need our Travel brocher? Download here.<a href="#" target="_blank" class="cv-pdf"><i class="fa fa-download" aria-hidden="true"></i><span class="sr-only">Download link.</span></a></p>
-				</div>
-				<div class="col-sm-4">
-						<h4 class="uppercase general-sub">Social</h4>
-						<ul class="list-inline social-links">
-							<li class="list-inline-item">
-								<a target="_blank" href="#">
-									<i class="fa fa-facebook" aria-hidden="true"></i>
-									<span class="sr-only">FaceBook</span>
-								</a>
-							</li>
-							 <li class="list-inline-item">
+
+  <footer class="container-fluid">
+      <div id="footer-details" class="row">
+        <div class="col-sm-4">
+          <h4 class="uppercase general-sub">About</h4>
+          <p class="inline-block footertext">Travel Agent since more than a decade, helped thousands of travellers cherish a safe and wonderful holiday.</p>
+        </div>
+        <div class="col-sm-4">
+            <h4 class="uppercase general-sub">Download</h4>
+              <p class="inline-block footertext"> Need our Travel brocher? Download here.<a href="#" target="_blank" class="cv-pdf"><i class="fa fa-download" aria-hidden="true"></i><span class="sr-only">Download link.</span></a></p>
+        </div>
+        <div class="col-sm-4">
+            <h4 class="uppercase general-sub">Social</h4>
+            <ul class="list-inline social-links">
+              <li class="list-inline-item">
+                <a target="_blank" href="#">
+                  <i class="fa fa-facebook" aria-hidden="true"></i>
+                  <span class="sr-only">FaceBook</span>
+                </a>
+              </li>
+               <li class="list-inline-item">
                         <a target="_blank" href="#">
                             <i class="fa fa-twitter" aria-hidden="true"></i>
                             <span class="sr-only">Twitter</span>
                         </a>
                 </li>
-															<li class="list-inline-item">
-								<a target="_blank" href="#">
-									<i class="fa fa-linkedin" aria-hidden="true"></i>
-									<span class="sr-only">Linkedin</span>
-								</a>
-							</li>
-							 <li class="list-inline-item">
-                        <a target="_blank" href="#">
-                            <i class="fa fa-pinterest" aria-hidden="true"></i>
-                            <span class="sr-only">Pinterest</span>
-                        </a>
-                </li>
-								<li class="list-inline-item">
-									<a target="_blank" href="#">
-										<i class="fa fa-instagram" aria-hidden="true"></i>
-										<span class="sr-only">Instagram</span>
-								</a>
-							</li>
-							<li class="list-inline-item">
-									<a target="_blank" href="#">
-										<i class="fa fa-youtube" aria-hidden="true"></i>
-										<span class="sr-only">YouTube</span>
-								</a>
-							</li>
-						</ul>
-				</div>
-			</div>
-		</footer>
+                              <li class="list-inline-item">
+                <a target="_blank" href="#">
+                  <i class="fa fa-linkedin" aria-hidden="true"></i>
+                  <span class="sr-only">Linkedin</span>
+                </a>
+              </li>
+              <li class="list-inline-item">
+                  <a target="_blank" href="#">
+                    <i class="fa fa-youtube" aria-hidden="true"></i>
+                    <span class="sr-only">YouTube</span>
+                </a>
+              </li>
+            </ul>
+        </div>
+      </div>
+ </footer>
   <script>
 // Initialize and add the map
 function initMap() {
