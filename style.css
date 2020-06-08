@@ -134,6 +134,36 @@ li{
 .about-heading{
 padding-left: 20px;
 }
+.responsive-img{
+height: 300px;
+width: 220px;
+}
+.responsive-video{
+  width: 90%;
+  height:75%;
+}
+
+}
+@media screen and (max-width: 520px) {
+.about-heading{
+padding-left: 20px;
+}
+.responsive-img{
+  width: 120%;
+  height:100%;
+}
+.responsive-video{
+  width: 98%;
+  height:100%;
+}
+.about-heading{
+   padding-top: 20px; 
+ }
+ .city-weather{
+     margin-top: 40px;
+     margin-left: 15px;
+    
+ }
 }
 
 /* footer styling */
