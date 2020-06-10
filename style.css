@@ -129,55 +129,7 @@ color: white;
 li{
 	text-decoration:none;
 }
- p.highlight{
-        background: #e6e6e6;
-    }
-    .content-boxplaces{
-       margin-left:20px;
-        width:180px;
-        height:40px;
-        border-radius:6px;
-        background-color:#add8e6;
-        padding: 0 20px;
-        margin-bottom:20px;
-    }
-    .content-titleBefore{
-        font-size: 22px;
-        font-family: arial;
-        text-align:center;
-        line-height: 60px;
-            }
-    .content-paraAfter{
-       display:none;
-       font-size: 18px;
-       font-family: arial;
-       text-align: left;
-       line-height:20px;
-       opacity:0; 
-    }
-    .content-boxfoods{
-       margin-left:20px;
-        width:180px;
-        height:40px;
-        border-radius:6px;
-        background-color:#add8e6;
-        padding: 0 20px;
-          margin-bottom:20px;
-    }
-    .content-foodBefore{
-        font-size: 22px;
-        font-family: arial;
-        text-align:center;
-        line-height: 60px;
-            }
-    .content-foodAfter{
-       display:none;
-       font-size: 18px;
-       font-family: arial;
-       text-align: left;
-       line-height:20px;
-       opacity:0; 
-    }
+
 
 @media screen and (max-width: 768px) {
 .about-heading{
