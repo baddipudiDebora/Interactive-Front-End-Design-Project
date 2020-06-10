@@ -18,6 +18,52 @@
     p.highlight{
         background: #e6e6e6;
     }
+    .content-boxplaces{
+       margin-left:20px;
+        width:180px;
+        height:40px;
+        border-radius:6px;
+        background-color:#add8e6;
+        padding: 0 20px;
+        margin-bottom:20px;
+    }
+    .content-titleBefore{
+        font-size: 22px;
+        font-family: arial;
+        text-align:center;
+        line-height: 60px;
+            }
+    .content-paraAfter{
+       display:none;
+       font-size: 18px;
+       font-family: arial;
+       text-align: left;
+       line-height:20px;
+       opacity:0; 
+    }
+    .content-boxfoods{
+       margin-left:20px;
+        width:180px;
+        height:40px;
+        border-radius:6px;
+        background-color:#add8e6;
+        padding: 0 20px;
+          margin-bottom:20px;
+    }
+    .content-foodBefore{
+        font-size: 22px;
+        font-family: arial;
+        text-align:center;
+        line-height: 60px;
+            }
+    .content-foodAfter{
+       display:none;
+       font-size: 18px;
+       font-family: arial;
+       text-align: left;
+       line-height:20px;
+       opacity:0; 
+    }
 </style>
 <script>
 $(document).ready(function(){
@@ -25,6 +71,20 @@ $(document).ready(function(){
         $(this).addClass("highlight");
     }, function(){
         $(this).removeClass("highlight");
+    });
+          $(".content-boxplaces").click(function(){
+        $(".content-boxplaces").animate({
+            width:'500px',
+            height:'300px'
+            }, 'fast');
+            $(".content-paraAfter").show().animate({opacity:'1'},'slow');
+    });
+      $(".content-boxfoods").click(function(){
+        $(".content-boxfoods").animate({
+            width:'500px',
+            height:'300px'
+            }, 'fast');
+            $(".content-foodAfter").show().animate({opacity:'1'},'slow');
     });
 });
 </script>
@@ -82,7 +142,7 @@ $(document).ready(function(){
                 </div>
             </div>
      </div>
-		 <div class="row section-new">
+	 <div class="row section-new">
             <div class="col-md-3 city-map">
                <h4 class="title">Location</h4>
                    <div id="map"></div>
@@ -103,18 +163,19 @@ $(document).ready(function(){
                             <div id="wind_speed-data"></div>
                           </div>
 							</div>
-				</div>        
-				<div class="row botton-sec section-new">
-                 <div class="col-md-3">
-                    <h4 class="title">Places to visit</h4>
-                     <p>Top tourist attractions -  with a link to google places</p>
+	</div>        
+	<div class="row botton-sec section-new">
+            <div class="col-md-3 content-boxplaces">
+                    <h4 class="content-titleBefore">Places to visit</h4>
+                     <p class="content-paraAfter">Top tourist attractions - vnvbncvbxcbcvbcvbcvbcvb with a link to google places</p>
                   </div>
-                 <div class="col-md-6">
+                 <div class="col-md-5">
                   <h4 class="title">Best Accomodations</h4>   
                    <p>Some of the best hotels to choose from. you can explore more</p>                     
                  </div>
-	                 <div class="col-md-3">
-                   <h4 class="title">Foods <small class="text-muted">to try in Delhi</small></h4>
+	                 <div class="col-md-3 content-boxfoods">
+                   <h4 class="content-foodBefore">Foods <small class="text-muted">to try in Delhi</small></h4>
+                  <p class="content-foodAfter">
                    <ul>
                     <li>Chaat</li> 
                    <li>Momos</li> 
@@ -124,6 +185,7 @@ $(document).ready(function(){
                    <li>Paranthas</li> 
                    <li>Daal Makhani</li>
                    </ul>
+                  </p>
                  </div>
               </div>
       </section>
