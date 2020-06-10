@@ -15,7 +15,7 @@
 <script src="https://kit.fontawesome.com/2a05f92155.js" crossorigin="anonymous"></script>
 <link rel="stylesheet" href="style.css">
 <style>
-    p.highlight{
+ p.highlight{
         background: #e6e6e6;
     }
     .content-boxplaces{
@@ -57,12 +57,13 @@
         line-height: 60px;
             }
     .content-foodAfter{
-       display:none;
+       display: none;
        font-size: 18px;
        font-family: arial;
+       color: black;
        text-align: left;
        line-height:20px;
-       opacity:0; 
+       opacity: 0; 
     }
 </style>
 <script>
@@ -72,7 +73,8 @@ $(document).ready(function(){
     }, function(){
         $(this).removeClass("highlight");
     });
-          $(".content-boxplaces").click(function(){
+
+        $(".content-boxplaces").click(function(){
         $(".content-boxplaces").animate({
             width:'500px',
             height:'300px'
@@ -84,7 +86,7 @@ $(document).ready(function(){
             width:'500px',
             height:'300px'
             }, 'fast');
-            $(".content-foodAfter").show().animate({opacity:'1'},'slow');
+            $(".content-foodAfter").show().animate({opacity: '1'},'slow');
     });
 });
 </script>
@@ -167,24 +169,19 @@ $(document).ready(function(){
 	<div class="row botton-sec section-new">
             <div class="col-md-3 content-boxplaces">
                     <h4 class="content-titleBefore">Places to visit</h4>
-                     <p class="content-paraAfter">Top tourist attractions - vnvbncvbxcbcvbcvbcvbcvb with a link to google places</p>
-                  </div>
+                     <p class="content-paraAfter">Top tourist attractions - vnvbcvb with a link to google places</p>
+            </div>
                  <div class="col-md-5">
                   <h4 class="title">Best Accomodations</h4>   
                    <p>Some of the best hotels to choose from. you can explore more</p>                     
                  </div>
+
 	                 <div class="col-md-3 content-boxfoods">
-                   <h4 class="content-foodBefore">Foods <small class="text-muted">to try in Delhi</small></h4>
+                   <h4 class="content-foodBefore">Foods<small class="text-muted">to try in Delhi</small></h4>
                   <p class="content-foodAfter">
-                   <ul>
-                    <li>Chaat</li> 
-                   <li>Momos</li> 
-                   <li>Pakodas</li> 
-                   <li>Chola Bhatura</li> 
-                   <li>Kebabs</li> 
-                   <li>Paranthas</li> 
-                   <li>Daal Makhani</li>
-                   </ul>
+                 
+                   Chaat, Momos, Pakodas, Chola Bhatura, Kebabs, Paranthas, Daal Makhani
+                
                   </p>
                  </div>
               </div>
