@@ -14,6 +14,20 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
 <script src="https://kit.fontawesome.com/2a05f92155.js" crossorigin="anonymous"></script>
 <link rel="stylesheet" href="style.css">
+<style>
+    p.highlight{
+        background: #e6e6e6;
+    }
+</style>
+<script>
+$(document).ready(function(){
+    $("p").hover(function(){
+        $(this).addClass("highlight");
+    }, function(){
+        $(this).removeClass("highlight");
+    });
+});
+</script>
 </head>
 <body>
 <header>
@@ -95,7 +109,8 @@
                      <p>Top tourist attractions -  with a link to google places</p>
                   </div>
                  <div class="col-md-6">
-                  <h4 class="title">Best Accomodations</h4>                        
+                  <h4 class="title">Best Accomodations</h4>   
+                   <p>Some of the best hotels to choose from. you can explore more</p>                     
                  </div>
 	                 <div class="col-md-3">
                    <h4 class="title">Foods <small class="text-muted">to try in Delhi</small></h4>

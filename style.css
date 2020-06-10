@@ -130,7 +130,7 @@ li{
 }
 
 
-@media screen and (max-width: 943px) {
+@media screen and (max-width: 768px) {
 .about-heading{
 padding-left: 20px;
 }
@@ -142,9 +142,9 @@ width: 220px;
   width: 90%;
   height:75%;
 }
-
 }
-@media screen and (max-width: 520px) {
+
+@media screen and (max-width: 600px) {
 .about-heading{
 padding-left: 20px;
 }
