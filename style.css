@@ -32,13 +32,10 @@ html , body{
 #hero-image{
     height:500px;
     width: 100%;
-    
+   }
 
-}
 #hero-outer{
-    height:500px;
-    width: 100%;
-    overflow:hidden;
+   background-size: cover;
 }
 
 
@@ -52,6 +49,10 @@ html , body{
     height:500px;
     width: 100%;
   	margin: -200 50 0 50;
+}
+.team-section{
+    margin-left:10px;
+    margin-right: 10px;
 }
 }
 /* 
