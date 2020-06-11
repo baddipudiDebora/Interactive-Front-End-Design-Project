@@ -15,59 +15,70 @@
 <script src="https://kit.fontawesome.com/2a05f92155.js" crossorigin="anonymous"></script>
 <link rel="stylesheet" href="style.css">
 <style>
-    p.highlight{
-        background: #e6e6e6;
+    html , body{
+    height:0;
+    background-color: #f7f3e1;
+    }
+
+    footer{
+    background-color: #8D8741;;
+	min-height: 75px;
+	margin: 0;
+}
+    .about-city.highlight{
+        background: #e0be92;
     }
     .content-boxplaces{
-       margin-left:20px;
-        width:180px;
-        height:40px;
+        margin-left:20px;
+        width:100%;
+        height:100%;
         border-radius:6px;
-        background-color:#add8e6;
+        background-color:#e0be92;
         padding: 0 20px;
         margin-bottom:20px;
     }
     .content-titleBefore{
         font-size: 22px;
-        font-family: arial;
-        text-align:center;
-        line-height: 60px;
+        font-family: Roboto;
+        text-align:left;
+        line-height:30px;
             }
     .content-paraAfter{
        display:none;
-       font-size: 18px;
-       font-family: arial;
+       font-size: 16px;
+       font-family: Roboto;
        text-align: left;
-       line-height:20px;
+       line-height:18px;
        opacity:0; 
     }
     .content-boxfoods{
        margin-left:20px;
-        width:180px;
-        height:40px;
+        width:100%; 
+        height:100%;
         border-radius:6px;
-        background-color:#add8e6;
+        background-color:#e0be92;
         padding: 0 20px;
-          margin-bottom:20px;
+        margin-bottom:20px;
     }
     .content-foodBefore{
         font-size: 22px;
-        font-family: arial;
-        text-align:center;
-        line-height: 60px;
+        font-family: Roboto;
+        text-align:left;
+        line-height: 30px;
             }
     .content-foodAfter{
        display:none;
-       font-size: 18px;
-       font-family: arial;
+       font-size: 16px;
+       font-family: Roboto;
        text-align: left;
-       line-height:20px;
+       line-height:18px;
        opacity:0; 
     }
+    
 </style>
 <script>
 $(document).ready(function(){
-    $("p").hover(function(){
+    $(".about-city").hover(function(){
         $(this).addClass("highlight");
     }, function(){
         $(this).removeClass("highlight");
@@ -75,14 +86,14 @@ $(document).ready(function(){
           $(".content-boxplaces").click(function(){
         $(".content-boxplaces").animate({
             width:'500px',
-            height:'300px'
+            height:'100%'
             }, 'fast');
             $(".content-paraAfter").show().animate({opacity:'1'},'slow');
     });
       $(".content-boxfoods").click(function(){
         $(".content-boxfoods").animate({
             width:'500px',
-            height:'300px'
+            height:'100%',
             }, 'fast');
             $(".content-foodAfter").show().animate({opacity:'1'},'slow');
     });
@@ -127,7 +138,7 @@ $(document).ready(function(){
 					<div class="row">
 						<div class="col-md-12">
                         <h3 class="city-heading uppercase">kanyakumari</h3>
-												<img src="https://img.traveltriangle.com/blog/wp-content/uploads/2018/04/kanyakumari-beach.jpg" class="responsive-img" alt="kanyakumari" />
+						  <img src="https://img.traveltriangle.com/blog/wp-content/uploads/2018/04/kanyakumari-beach.jpg" class="city-img responsive-img" alt="kanyakumari" />
                     </div>
                 </div>
             </div>
@@ -135,7 +146,8 @@ $(document).ready(function(){
                 <div class="row">
                     <div class="col-md-12">
                         <h3 class="about-heading uppercase">All about kanyakumari and around</h3>
-												<p class="about-kanyakumari">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+												<p class="about-kanyakumari">Kanyakumari is a coastal town in the state of Tamil Nadu on India's southern tip. Jutting into the Laccadive Sea, the town was known as Cape Comorin during British rule and is popular for watching sunrise and sunset over the ocean. It's also a noted pilgrimage site thanks to its Bagavathi Amman Temple, dedicated to a consort of Shiva, and its Our Lady of Ransom Church, a center of Indian Catholicism.
+                                                The state-owned Poompuhar Shipping Corporation runs ferry services between the town and the Vivekananda Rock Memorial and Thiruvalluvar statue, situated on rocky islets off the coast. The operation of the ferry service began in 1984. Two ferries were used to ferry the tourists until June 2013, after which a new ferry was added to the service on the occasion of 150th birth anniversary of Swamy Vivekananda</p>
                     </div>
                 </div>
             </div>
@@ -151,7 +163,9 @@ $(document).ready(function(){
                </div>
 							<div class="col-md-2 city-weather">
 							     <h4 class="title">Weather: </h4>
-									 <br>
+								<p class="d-md-none d-lg-block">
+                                All round the year the climate in Kanyakumari remains fairly comfortable and the temperature ranges from a maximum of 35° Celsius and a minimum of 21°Celsius.
+                                </p>
 									        <div id="weatherdata" onload="fetchWeatherData()"></div>
                           <div class="weatherdata">
                             <div id="temp-data"></div>
@@ -161,8 +175,8 @@ $(document).ready(function(){
                             <div id="wind_speed-data"></div>
                           </div>
 							</div>
-				</div>        
-	<div class="row botton-sec section-new">
+				</div>  
+    <div class="row botton-sec section-new">
             <div class="col-md-3 content-boxplaces">
                     <h4 class="content-titleBefore">Places to visit</h4>
                      <p class="content-paraAfter">Top tourist attractions - vnvbncvbxcbcvbcvbcvbcvb with a link to google places</p>
@@ -174,15 +188,7 @@ $(document).ready(function(){
 	                 <div class="col-md-3 content-boxfoods">
                    <h4 class="content-foodBefore">Foods <small class="text-muted">to try in Delhi</small></h4>
                   <p class="content-foodAfter">
-                   <ul>
-                    <li>Chaat</li> 
-                   <li>Momos</li> 
-                   <li>Pakodas</li> 
-                   <li>Chola Bhatura</li> 
-                   <li>Kebabs</li> 
-                   <li>Paranthas</li> 
-                   <li>Daal Makhani</li>
-                   </ul>
+                  Typical South-Indian delicacies that one must try include Idli, Dosa, Chutney, Vada, Sambhar, Rasam, Upma, Sweet Pongal, Payassam, Kesari. One also finds North-Indian, Gujarati, Chinese, Rajasthani cuisines here.
                   </p>
                  </div>
               </div>

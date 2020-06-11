@@ -15,78 +15,87 @@
 <script src="https://kit.fontawesome.com/2a05f92155.js" crossorigin="anonymous"></script>
 <link rel="stylesheet" href="style.css">
 <style>
- p.highlight{
-        background: #e6e6e6;
+    html , body{
+    height:0;
+    background-color: #f7f3e1;
+    }
+
+    footer{
+    background-color: #8D8741;;
+	min-height: 75px;
+	margin: 0;
+}
+    .about-city.highlight{
+        background: #e0be92;
     }
     .content-boxplaces{
-       margin-left:20px;
-        width:180px;
-        height:40px;
+        margin-left:20px;
+        width:100%;
+        height:100%;
         border-radius:6px;
-        background-color:#add8e6;
+        background-color:#e0be92;
         padding: 0 20px;
         margin-bottom:20px;
     }
     .content-titleBefore{
         font-size: 22px;
-        font-family: arial;
-        text-align:center;
-        line-height: 60px;
+        font-family: Roboto;
+        text-align:left;
+        line-height:30px;
             }
     .content-paraAfter{
        display:none;
-       font-size: 18px;
-       font-family: arial;
+       font-size: 16px;
+       font-family: Roboto;
        text-align: left;
-       line-height:20px;
+       line-height:18px;
        opacity:0; 
     }
     .content-boxfoods{
        margin-left:20px;
-        width:180px;
-        height:40px;
+        width:100%; 
+        height:100%;
         border-radius:6px;
-        background-color:#add8e6;
+        background-color:#e0be92;
         padding: 0 20px;
-          margin-bottom:20px;
+        margin-bottom:20px;
     }
     .content-foodBefore{
         font-size: 22px;
-        font-family: arial;
-        text-align:center;
-        line-height: 60px;
+        font-family: Roboto;
+        text-align:left;
+        line-height: 30px;
             }
     .content-foodAfter{
-       display: none;
-       font-size: 18px;
-       font-family: arial;
-       color: black;
+       display:none;
+       font-size: 16px;
+       font-family: Roboto;
        text-align: left;
-       line-height:20px;
-       opacity: 0; 
+       line-height:18px;
+       opacity:0; 
     }
+    
 </style>
 <script>
 $(document).ready(function(){
-    $("p").hover(function(){
+    $(".about-city").hover(function(){
         $(this).addClass("highlight");
     }, function(){
         $(this).removeClass("highlight");
     });
-
-        $(".content-boxplaces").click(function(){
+          $(".content-boxplaces").click(function(){
         $(".content-boxplaces").animate({
             width:'500px',
-            height:'300px'
+            height:'100%'
             }, 'fast');
             $(".content-paraAfter").show().animate({opacity:'1'},'slow');
     });
       $(".content-boxfoods").click(function(){
         $(".content-boxfoods").animate({
             width:'500px',
-            height:'300px'
+            height:'100%',
             }, 'fast');
-            $(".content-foodAfter").show().animate({opacity: '1'},'slow');
+            $(".content-foodAfter").show().animate({opacity:'1'},'slow');
     });
 });
 </script>
@@ -122,8 +131,7 @@ $(document).ready(function(){
             </div>
             </div>
         </nav>
-  
-</header>
+ </header>
  
   <section>
      <div class="row section-new">
@@ -131,7 +139,7 @@ $(document).ready(function(){
 					<div class="row">
 						<div class="col-md-12">
 							<h3>Delhi</h3>
-				  			<img src="https://i2.wp.com/cheerfultrails.com/wp-content/uploads/2018/12/itinerarypin.jpg?resize=564%2C385&ssl=1" class="delhi-img responsive-img" alt="Delhi - capital of India" />
+				  			<img src="https://st2.depositphotos.com/2120395/8302/v/600/depositphotos_83026700-stock-video-india-gate-new-delhi-india.jpg" class="city-img responsive-img" alt="Delhi - capital of India" />
 						</div>
 				</div>
        </div>
@@ -139,12 +147,14 @@ $(document).ready(function(){
                 <div class="row">
                     <div class="col-md-12">
                         <h3 class="title">All about Delhi and around</h3>
-                        <p class="about-delhi">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                        <p class="about-city">Delhi, India’s capital territory, is a massive metropolitan area in the country’s north. In Old Delhi, a neighborhood dating to the 1600s, stands the imposing Mughal-era Red Fort, a symbol of India, and the sprawling Jama Masjid mosque, whose courtyard accommodates 25,000 people. Nearby is Chandni Chowk, a vibrant bazaar filled with food carts, sweets shops and spice stalls.
+                        Delhi is famous for its heritage sites, featuring UNESCO Heritage sites like Red Fort, Humayun's Tomb, Jama Masjid and Qutub Minar. Some of the other popular tourist destinations in Delhi are Old Fort, the famous ISKCON temple</p>
                     </div>
                 </div>
             </div>
      </div>
-	 <div class="row section-new">
+    <br>
+     <div class="row section-new">
             <div class="col-md-3 city-map">
                <h4 class="title">Location</h4>
                    <div id="map"></div>
@@ -155,7 +165,10 @@ $(document).ready(function(){
                </div>
 							<div class="col-md-2 city-weather">
 							     <h4 class="title">Weather: </h4>
-									 <br>
+									  <!-- as it would become clumpsy with too much content the para tag should be blocked in tab view-->
+								<p class="d-md-none d-lg-block">
+                                The climate of New Delhi is a hot semi-arid climate. The temperature varies from 46 °C (115 °F) in summers to around 0 °C (32 °F) in winters. 
+                                </p>
 									        <div id="weatherdata" onload="fetchWeatherData()"></div>
                           <div class="weatherdata">
                             <div id="temp-data"></div>
@@ -165,23 +178,21 @@ $(document).ready(function(){
                             <div id="wind_speed-data"></div>
                           </div>
 							</div>
-	</div>        
-	<div class="row botton-sec section-new">
+	</div> 
+    <br>       
+ 	   <div class="row botton-sec section-new">
             <div class="col-md-3 content-boxplaces">
-                    <h4 class="content-titleBefore">Places to visit</h4>
-                     <p class="content-paraAfter">Top tourist attractions - vnvbcvb with a link to google places</p>
-            </div>
+                    <h4 class="content-titleBefore">Click her to see Places to visit</h4>
+                     <p class="content-paraAfter">Avalanche Lake,Ooty Botanical Gardens, Emerald Lake,Doddabetta Peak, Deer park, Mudumalai National Park,Ooty Rose Garden, Ooty Toy train, Toda Huts Ooty,Wax World Ooty ...</p>
+                  </div>
                  <div class="col-md-5">
-                  <h4 class="title">Best Accomodations</h4>   
+                  <h4 class="title">Some of the Best Accomodations</h4>   
                    <p>Some of the best hotels to choose from. you can explore more</p>                     
                  </div>
-
 	                 <div class="col-md-3 content-boxfoods">
-                   <h4 class="content-foodBefore">Foods<small class="text-muted">to try in Delhi</small></h4>
+                   <h4 class="content-foodBefore">Click her for Foods to try in Delhi</h4>
                   <p class="content-foodAfter">
-                 
-                   Chaat, Momos, Pakodas, Chola Bhatura, Kebabs, Paranthas, Daal Makhani
-                
+                  Chicken Chettinadand "Kozhi Varutharachathu" are sure to be rated among your favorites if you like your chicken on the spicy side. If you happen to be a strict veggie, Avial, a dish made by mixing seven to eight vegetables is one of the all time favorites of the local inhabitants.
                   </p>
                  </div>
               </div>
@@ -237,7 +248,6 @@ function initMap() {
    var marker = new google.maps.Marker({position: delhi, map: map});
 }
     </script>
-
 <script>
       var xhr = new XMLHttpRequest();
       var data;

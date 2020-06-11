@@ -29,9 +29,9 @@
         background: #e0be92;
     }
     .content-boxplaces{
-       margin-left:20px;
-        width:180px;
-        height:40px;
+        margin-left:20px;
+        width:100%;
+        height:100%;
         border-radius:6px;
         background-color:#e0be92;
         padding: 0 20px;
@@ -40,21 +40,21 @@
     .content-titleBefore{
         font-size: 22px;
         font-family: Roboto;
-        text-align:center;
-        line-height: 60px;
+        text-align:left;
+        line-height:30px;
             }
     .content-paraAfter{
        display:none;
-       font-size: 18px;
+       font-size: 16px;
        font-family: Roboto;
        text-align: left;
-       line-height:20px;
+       line-height:18px;
        opacity:0; 
     }
     .content-boxfoods{
        margin-left:20px;
-        width:180px;
-        height:40px;
+        width:100%; 
+        height:100%;
         border-radius:6px;
         background-color:#e0be92;
         padding: 0 20px;
@@ -63,17 +63,18 @@
     .content-foodBefore{
         font-size: 22px;
         font-family: Roboto;
-        text-align:center;
-        line-height: 60px;
+        text-align:left;
+        line-height: 30px;
             }
     .content-foodAfter{
        display:none;
-       font-size: 18px;
+       font-size: 16px;
        font-family: Roboto;
        text-align: left;
-       line-height:20px;
+       line-height:18px;
        opacity:0; 
     }
+    
 </style>
 <script>
 $(document).ready(function(){
@@ -85,14 +86,14 @@ $(document).ready(function(){
           $(".content-boxplaces").click(function(){
         $(".content-boxplaces").animate({
             width:'500px',
-            height:'300px'
+            height:'100%'
             }, 'fast');
             $(".content-paraAfter").show().animate({opacity:'1'},'slow');
     });
       $(".content-boxfoods").click(function(){
         $(".content-boxfoods").animate({
             width:'500px',
-            height:'300px'
+            height:'100%',
             }, 'fast');
             $(".content-foodAfter").show().animate({opacity:'1'},'slow');
     });
@@ -138,7 +139,7 @@ $(document).ready(function(){
 					<div class="row">
 						<div class="col-md-12">
                         <h3 class="city-heading uppercase">ooty</h3>
-												<img src="https://i.ytimg.com/vi/0A4Vna4Anpc/hqdefault.jpg" class="responsive-img" alt="ooty" />
+												<img src="https://i.ytimg.com/vi/0A4Vna4Anpc/hqdefault.jpg" class="city-img responsive-img" alt="ooty" />
                     </div>
                 </div>
               
@@ -147,25 +148,30 @@ $(document).ready(function(){
                 <div class="row">
                     <div class="col-md-12">
                         <h3 class="about-heading uppercase">All about ooty and around</h3>
-							<p class="about-city">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+							<p class="about-city">Ooty (short for Udhagamandalam) is a resort town in the Western Ghats mountains, in southern India's Tamil Nadu state. Founded as a British Raj summer resort, it retains a working steam railway line. Other reminders of its colonial past include Stone House, a 19th-century residence, and the circa-1829 St. Stephen’s Church. Its 55-acre Government Botanical Garden lies on the slopes of Doddabetta Peak.
+                            Ooty is most famous for its tea plantations. Connoisseurs will find plenty to choose from: dust and leaf; black, green, black and white varieties; and flavours such as masala, jasmine, cardamom and even chocolate. Bon voyage!! Ooty or Udagamandalam is mostly famous for Tea, and handmade chocolates.</p>
                     </div>
                 </div>
             </div>
      </div>
+     <br>
  <div class="row section-new">
             <div class="col-md-3 city-map">
                <h4 class="title">Location</h4>
                    <div id="map"></div>
-             </div>
-               <div class="col-md-7 city-video">
+            </div>
+            <div class="col-md-7 city-video">
 								 		<h4 class="title">A short glimps of the City </h4>
                                <iframe class="responsive-video" src="https://www.youtube.com/embed/E1PrdoIUs_o?autoplay=1"></iframe>
-               </div>
+            </div>
 							<div class="col-md-2 city-weather">
 							     <h4 class="title">Weather: </h4>
-									 <br>
+                                <!-- as it would become clumpsy with too much content the para tag should be blocked in tab view-->
+								<p class="d-md-none d-lg-block">
+                                Despite its location in the tropics, in contrast with most of South India, Ooty generally features mild conditions throughout the year.
+                                </p>
 									        <div id="weatherdata" onload="fetchWeatherData()"></div>
-                          <div class="weatherdata">
+                            <div class="weatherdata">
                             <div id="temp-data"></div>
                             <div id="feelslike-data"></div>
                             <div id="temp_max-data"></div>
@@ -173,20 +179,21 @@ $(document).ready(function(){
                             <div id="wind_speed-data"></div>
                           </div>
 							</div>
-				</div>        
-	<div class="row botton-sec section-new">
+				</div>   
+        <br>     
+	   <div class="row botton-sec section-new">
             <div class="col-md-3 content-boxplaces">
                     <h4 class="content-titleBefore">Click her to see Places to visit</h4>
                      <p class="content-paraAfter">Avalanche Lake,Ooty Botanical Gardens, Emerald Lake,Doddabetta Peak, Deer park, Mudumalai National Park,Ooty Rose Garden, Ooty Toy train, Toda Huts Ooty,Wax World Ooty ...</p>
                   </div>
                  <div class="col-md-5">
-                  <h4 class="title">SOme of the Best Accomodations</h4>   
+                  <h4 class="title">Some of the Best Accomodations</h4>   
                    <p>Some of the best hotels to choose from. you can explore more</p>                     
                  </div>
 	                 <div class="col-md-3 content-boxfoods">
-                   <h4 class="content-foodBefore">Click her for Foods <small class="text-muted">to try in Ooty</small></h4>
+                   <h4 class="content-foodBefore">Click her for Foods to try in Ooty</h4>
                   <p class="content-foodAfter">
-                  Chicken Chettinadand "Kozhi Varutharachathu" are sure to be rated among your favorites if you like your chicken on the spicy side. If you happen to be a strict veggie, then also you have nothing to worry about. Veggies also have a lot to look forward to in Ooty. Avial, a dish made by mixing seven to eight vegetables is one of the all time favorites of the local inhabitants.
+                  Chicken Chettinadand "Kozhi Varutharachathu" are sure to be rated among your favorites if you like your chicken on the spicy side. If you happen to be a strict veggie, Avial, a dish made by mixing seven to eight vegetables is one of the all time favorites of the local inhabitants.
                   </p>
                  </div>
               </div>
@@ -265,11 +272,11 @@ xhr.onreadystatechange = function() {
 }
 
 setTimeout(function() {
-				document.getElementById("temp-data").innerHTML =`<h6>Ooty temp in celsius today is ${data.main.temp}</h6>` ;
-			document.getElementById("feelslike-data").innerHTML =`<h6>Feels like ${data.main.feels_like}</h6>` ;
-			document.getElementById("temp_max-data").innerHTML =`<h6>Max temp today is ${data.main.temp_max}</h6>` ;
-			document.getElementById("temp_min-data").innerHTML =`<h6>Min temp  today is ${data.main.temp_min}</h6>` ;
-			document.getElementById("wind_speed-data").innerHTML =`<h6>Wind Speed today is ${data.wind.speed}</h6>` ;	
+			document.getElementById("temp-data").innerHTML =`<h6><b>Ooty temp in celsius today is</b> ${data.main.temp}</h6>` ;
+			document.getElementById("feelslike-data").innerHTML =`<h6><b>Feels like </b> ${data.main.feels_like}</h6>` ;
+			document.getElementById("temp_max-data").innerHTML =`<h6><b>Max temp today is</b> ${data.main.temp_max}</h6>` ;
+			document.getElementById("temp_min-data").innerHTML =`<h6><b>Min temp  today is</b> ${data.main.temp_min}</h6>` ;
+			document.getElementById("wind_speed-data").innerHTML =`<h6><b>Wind Speed today is</b> ${data.wind.speed}</h6>` ;	
 			}, 500);
 
 var settings = {
