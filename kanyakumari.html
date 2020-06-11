@@ -179,14 +179,15 @@ $(document).ready(function(){
     <div class="row botton-sec section-new">
             <div class="col-md-3 content-boxplaces">
                     <h4 class="content-titleBefore">Places to visit</h4>
-                     <p class="content-paraAfter">Top tourist attractions - vnvbncvbxcbcvbcvbcvbcvb with a link to google places</p>
+                     <p class="content-paraAfter">Vivekananda Rock Memorial, Thiruvalluvar Statue, Bhagavathy Amman Temple, Gandhi Mandapam, Kanyakumari Beach, Thanumalayan Temple,
+Padmanabhapuram Palace, Our Lady Of Ransom Church, Vattakottai Fort, Mathur Aqueduct, Thirparappu Falls</p>
                   </div>
                  <div class="col-md-5">
                   <h4 class="title">Best Accomodations</h4>   
                    <p>Some of the best hotels to choose from. you can explore more</p>                     
                  </div>
 	                 <div class="col-md-3 content-boxfoods">
-                   <h4 class="content-foodBefore">Foods <small class="text-muted">to try in Delhi</small></h4>
+                   <h4 class="content-foodBefore">Foods <small class="text-muted">to try in Kanyakumari</small></h4>
                   <p class="content-foodAfter">
                   Typical South-Indian delicacies that one must try include Idli, Dosa, Chutney, Vada, Sambhar, Rasam, Upma, Sweet Pongal, Payassam, Kesari. One also finds North-Indian, Gujarati, Chinese, Rajasthani cuisines here.
                   </p>
@@ -267,13 +268,14 @@ xhr.onreadystatechange = function() {
     };
 }
 
-	setTimeout(function() {
-				document.getElementById("temp-data").innerHTML =`<h6>Kanyakumari temp in celsius today is ${data.main.temp}</h6>` ;
-			document.getElementById("feelslike-data").innerHTML =`<h6>Feels like ${data.main.feels_like}</h6>` ;
-			document.getElementById("temp_max-data").innerHTML =`<h6>Max temp today is ${data.main.temp_max}</h6>` ;
-			document.getElementById("temp_min-data").innerHTML =`<h6>Min temp  today is ${data.main.temp_min}</h6>` ;
-			document.getElementById("wind_speed-data").innerHTML =`<h6>Wind Speed today is ${data.wind.speed}</h6>` ;	
+setTimeout(function() {
+			document.getElementById("temp-data").innerHTML =`<h6><b>Kanyakumari temp in celsius today is</b> ${data.main.temp}</h6>` ;
+			document.getElementById("feelslike-data").innerHTML =`<h6><b>Feels like </b> ${data.main.feels_like}</h6>` ;
+			document.getElementById("temp_max-data").innerHTML =`<h6><b>Max temp today is</b> ${data.main.temp_max}</h6>` ;
+			document.getElementById("temp_min-data").innerHTML =`<h6><b>Min temp  today is</b> ${data.main.temp_min}</h6>` ;
+			document.getElementById("wind_speed-data").innerHTML =`<h6><b>Wind Speed today is</b> ${data.wind.speed}</h6>` ;	
 			}, 500);
+
 var settings = {
 	"async": true,
 	"crossDomain": true,

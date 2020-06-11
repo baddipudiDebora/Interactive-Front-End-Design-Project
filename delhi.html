@@ -183,7 +183,7 @@ $(document).ready(function(){
  	   <div class="row botton-sec section-new">
             <div class="col-md-3 content-boxplaces">
                     <h4 class="content-titleBefore">Click her to see Places to visit</h4>
-                     <p class="content-paraAfter">Avalanche Lake,Ooty Botanical Gardens, Emerald Lake,Doddabetta Peak, Deer park, Mudumalai National Park,Ooty Rose Garden, Ooty Toy train, Toda Huts Ooty,Wax World Ooty ...</p>
+                     <p class="content-paraAfter">India Gate, Red Fort, Taj Mahal, Lotus temple, Jantar Mantar , Rashtrapati Bhawan, Connaught Place, Gurudwara Bangla Sahib, Rail Museum, Nehru Memorial Museum and Library.</p>
                   </div>
                  <div class="col-md-5">
                   <h4 class="title">Some of the Best Accomodations</h4>   
@@ -192,7 +192,7 @@ $(document).ready(function(){
 	                 <div class="col-md-3 content-boxfoods">
                    <h4 class="content-foodBefore">Click her for Foods to try in Delhi</h4>
                   <p class="content-foodAfter">
-                  Chicken Chettinadand "Kozhi Varutharachathu" are sure to be rated among your favorites if you like your chicken on the spicy side. If you happen to be a strict veggie, Avial, a dish made by mixing seven to eight vegetables is one of the all time favorites of the local inhabitants.
+                  Chaat, Momos, Pakodas, Chola Bhatura, Kebabs, Paranthas, Mutton Korma, Paneer Tikka, Daal Makhani, Dhokla.
                   </p>
                  </div>
               </div>
@@ -261,13 +261,14 @@ function initMap() {
               data = JSON.parse(this.responseText);
           };
       }
-        setTimeout(function() {
-        document.getElementById("temp-data").innerHTML =`<h6>Temp : ${data.main.temp} c</h6>` ;
-      document.getElementById("feelslike-data").innerHTML =`<h6>Feels like ${data.main.feels_like} c</h6>` ;
-      document.getElementById("temp_max-data").innerHTML =`<h6>Max temp: ${data.main.temp_max} c</h6>` ;
-      document.getElementById("temp_min-data").innerHTML =`<h6>Min temp:${data.main.temp_min} c</h6>` ;
-      document.getElementById("wind_speed-data").innerHTML =`<h6>Wind Speed: ${data.wind.speed}</h6>` ; 
-      }, 500);
+setTimeout(function() {
+			document.getElementById("temp-data").innerHTML =`<h6><b>Delhi temp in celsius today is</b> ${data.main.temp}</h6>` ;
+			document.getElementById("feelslike-data").innerHTML =`<h6><b>Feels like </b> ${data.main.feels_like}</h6>` ;
+			document.getElementById("temp_max-data").innerHTML =`<h6><b>Max temp today is</b> ${data.main.temp_max}</h6>` ;
+			document.getElementById("temp_min-data").innerHTML =`<h6><b>Min temp  today is</b> ${data.main.temp_min}</h6>` ;
+			document.getElementById("wind_speed-data").innerHTML =`<h6><b>Wind Speed today is</b> ${data.wind.speed}</h6>` ;	
+			}, 500);
+
   </script>
   
 
