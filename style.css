@@ -1,15 +1,16 @@
 html , body{
-  height: 100%;
+  height:0;
+  background-color: #f7f3e1;
 }
 /* styling for nav bar */
 .navbar{
-  background-color: gold;
-}
+  background-color: #8D8741;
+  }
 
 .dropdown-menu {
   display: none;
   position: absolute;
-  background-color: #f1f1f1;
+  color: #f1f1f1;
   min-width: 160px;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   z-index: 1;
@@ -17,6 +18,7 @@ html , body{
 
 .dropdown-menu a {
   color: black;
+  font-weight: 500;
   padding: 12px 16px;
   text-decoration: none;
   display: block;
@@ -25,7 +27,7 @@ html , body{
 .dropdown:hover .dropdown-menu {display: block;}
 
 .navbar a:hover, .dropdown:hover {
-	 background-color: rgb(245, 157, 157);
+	 background-color: #FBEEC1;
    text-decoration: underline;
 }
 
@@ -50,10 +52,8 @@ html , body{
     width: 100%;
   	margin: -200 50 0 50;
 }
-.team-section{
-    margin-left:10px;
-    margin-right: 10px;
-}
+
+
 }
 /* 
 @keyframes hero-zoom {
@@ -169,7 +169,7 @@ padding-left: 20px;
 
 /* footer styling */
 footer{
-	background-color: #9dd3ec;
+ background-color: #8D8741;;
 	min-height: 75px;
 	margin: 0;
 }
