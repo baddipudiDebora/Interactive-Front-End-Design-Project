@@ -77,15 +77,9 @@ footer{
             </div>
         </nav>
         <section class="alert alert-info alert-dismissible fade show mb-0 text-center" role="alert"><div class="container">The WHO has classified Coronavirus (CO-VID-19) as a global pandemic. Check the <a href="https://travel.gc.ca/travelling/advisories" target="_blank" class="alert-link" data-toggle="tooltip" title="Please check here for more info !">Foreign and Commonwealth Office</a> for the latest travel advice.<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">x</span></button></div></section>
-		
-				<marquee><h3 style="color:red"> <div id="latestforexcadtoinr" onload="fetchforexData()"></div> </h3>
-
         </header>
 <!-- vacation typles -->
-<section>
 
-                         
-                            <div id="CAD-INR"></div></marquee>
 <div class="clearfix responsive"></div>
     <section id="hero-outer">
 			<!-- on document mouse over we want increase function to be called -->
@@ -268,18 +262,5 @@ footer{
         </div>
       </div>
  </footer>
- <script>
- var xhr = new XMLHttpRequest();
-      var data;
-      xhr.open("GET", "https://api.exchangeratesapi.io/latest?base=CAD");
-      xhr.send();
-      xhr.onreadystatechange = function() {
-          if (this.readyState == 4 && this.status == 200) {
-              data = JSON.parse(this.responseText);
-          };      }
-setTimeout(function() {
-			document.getElementById("CAD-INR").innerHTML =`<h6><b>CAD to INR today is</b> ${data.rates.INR}</h6>` ;
-					}, 500);
-</script>
 </body>
 </html>  
