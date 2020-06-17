@@ -17,18 +17,18 @@
 <link rel="stylesheet" href="style.css">
 <style>
 .row{
-		margin-left:10px;
-	}
+    margin-left:10px;
+  }
 h2{
-	padding:30px 0px;
+  padding:30px 0px;
 
 }
 .currencyrates{
-	padding-top:30px;
+  padding-top:30px;
 }
 
 #data{
-	padding-top:30px;
+  padding-top:30px;
 }
 
 </style>
@@ -69,7 +69,7 @@ h2{
 	 <div class="row">
     <div class="col col-lg-6 curdiv">
 		<h2>Handy Currency calulator to INR for your travel planning</h2>
-		<form  onsubmit="writeToDocument($('#currency').val())">
+		<form  onsubmit="writeToDocument($('#currency').val()) ; return false;">
 			<select name="currency" id="currency">
 				<option value="">Select base currency</option>
   			<option value="CAD">CAD</option>
@@ -105,31 +105,50 @@ h2{
 				<option value="KRW">KRW</option>
 				<option value="PLN">PLN</option>	
 		  </select>
-				<label for="amount">Enter the year for Holiday list</label><br>
+				<label for="amount">Enter your currency</label><br>
 				<input type="number" id="amount" name="amount"><br><br>
 			<button type="submit" class="btn btn-success">Submit</button>
 		</form>
+		<br>
 		<div id="curdata"></div>
 </div>
    <div class="col col-lg-6 holdiv">
-		<h2>Handy Holiday list of your country for your travel planning</h2>
-			<form  onsubmit="writeHolidayList($('#country').val(),$('#year').val())">
-				<label for="country">Enter your Country Code 2 letter foramt(ISO 3166-1) like CA for Canada</label>
-				<input type="text" id="country" name="country"><br><br>
-				<label for="year">Enter the year for Holiday list</label><br>
-				<input type="text" id="year" name="year"><br><br>
-				<input class="btn btn-success" type="submit" value="Submit">
-			</form>
-				<div id="holidayName"></div>
-					<div id="holidayDate"></div>
+    <h2>Handy Holiday list of your country for your travel planning</h2>
+      <form  onsubmit="writeHolidayList($('#country').val(),$('#year').val()) ; return false">
+        <label for="country">Enter your Country Code 2 letter foramt(ISO 3166-1) like CA for Canada</label>
+        <input type="text" id="country" name="country"><br><br>
+        <label for="year">Enter the year for Holiday list</label><br>
+        <input type="text" id="year" name="year"><br><br>
+        <input class="btn btn-success" type="submit" value="Submit">
+     	 </form>
+				<div class="row">
+        <div id="holidayName"></div>
+				<div id="holidayDate"></div>
+				</div>
 </div>
   </div>
-</main>
-
+<div class="row">
+	   <div class="col col-lg-6 weatherguide">
+		<h2>Handy weatherguide for your travel planning</h2>
+			<form  onsubmit="fetchWeatherData()">
+				<label for="place">Enter the place you wish to visit</label>
+				<input type="text" id="place" name="place"><br><br>
+				<input class="btn btn-success" type="submit" value="Submit">
+			</form>
+			  <div id="weatherdata" onload="fetchWeatherData() ; return false"></div>
+           <div class="weatherdata">
+           <div id="temp-data"></div>
+           <div id="feelslike-data"></div>
+           <div id="temp_max-data"></div>
+           <div id="temp_min-data"></div>
+           <div id="wind_speed-data"></div>
+          </div>
+					</div>
+					</div>
+					</main>
 <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 <script>
-		function writeToDocument(curr){
-			alert(curr);
+		function writeToDocument(curr) {
 		const baseURL = "https://api.exchangeratesapi.io/latest?base=";
 		var xhr = new XMLHttpRequest();
 			xhr.open("GET", baseURL + curr);
@@ -137,43 +156,57 @@ h2{
 					xhr.onreadystatechange = function() {
 							if (this.readyState == 4 && this.status == 200) {
 									data = JSON.parse(this.responseText);
-								
-							}; 
+								}; 
 						var conrate = data.rates.INR;
-						alert(conrate);
 						var amountreq = $('#amount').val();
-							alert(amountreq);
 						var totalinr = conrate * amountreq;
-						alert(totalinr);
-						document.getElementById("curdata").innerText = `<h6><b>${amountreq}  ${curr} to INR  is ${totalinr}</b> </h6>` ; 
+						document.getElementById("curdata").innerHTML = `<h6><b>${amountreq}  ${curr} to INR  is ${totalinr}</b> </h6>` ; 
 					}
 				};
 </script>
 <script>
 	function writeHolidayList(country, year){
-    alert(country);
-    const baseURL = "https://calendarific.com/api/v2/holidays?&api_key=83d13f37e76f899007ec577298954f12e46c87fe&country="+country+"&year="+year;
-    console.log(baseURL);
+		var dataarray;
+      const baseURL = "https://calendarific.com/api/v2/holidays?&api_key=83d13f37e76f899007ec577298954f12e46c87fe&country="+country+"&year="+year;
         var xhr = new XMLHttpRequest();
         xhr.open("GET", baseURL);
-        alert(baseURL);
-          xhr.send();
-           alert("hello");
-            xhr.onreadystatechange = function(){ 
-            alert(this.readyState);
-            alert(this.status);
-            if (this.readyState == 4 && this.status == 200) {
-                  alert(this.readyState);
-                 				data = JSON.parse(this.responseText);
-									alert(data.response.holidays.name);
-											}; 			}
+            xhr.send();
+			        xhr.onreadystatechange = function(){ 
+             if (this.readyState == 4 && this.status == 200) {
+							 var data = JSON.parse(this.responseText);
+						 dataarray = data.response.holidays;
+							dataarray.forEach(function(item){
+										 document.getElementById("holidayName").innerHTML += `<h6>${item.name}</h6>` ; 
+									 	 document.getElementById("holidayDate").innerHTML += `<h6>${item.date.iso}</h6>` 
+								});	
+			};
+			};
+			};
 
-						setTimeout(function() {
-									 document.getElementById("holidayName").innerHTML = `<h6>${data.response.holidays.name}</h6>` ; 
-									 	 document.getElementById("holidayDate").innerHTML = `<h6>${data.response.holidays.date.iso}</h6>` ; 
-            	}, 500);
+	
+
 		
-        }; 
+</script>
+<script>
+function	fetchWeatherData(){
+		alert(place);
+  		var xhr = new XMLHttpRequest();
+			var baseURL = "https://api.openweathermap.org/data/2.5/weather?q="+place+"&APPID=08186312a5a64c7bc1c004cd32050ebf&units=metric"
+			var data;
+			xhr.open("GET", baseURL);
+			xhr.send();
+			xhr.onreadystatechange = function() {
+					if (this.readyState == 4 && this.status == 200) {
+							data = JSON.parse(this.responseText);
+					}; 			}
+			setTimeout(function() {
+						document.getElementById("temp-data").innerHTML =`<h6><b>temp in celsius today is</b> ${data.main.temp}</h6>` ;
+						document.getElementById("feelslike-data").innerHTML =`<h6><b>Feels like </b> ${data.main.feels_like}</h6>` ;
+						document.getElementById("temp_max-data").innerHTML =`<h6><b>Max temp today is</b> ${data.main.temp_max}</h6>` ;
+						document.getElementById("temp_min-data").innerHTML =`<h6><b>Min temp  today is</b> ${data.main.temp_min}</h6>` ;
+						document.getElementById("wind_speed-data").innerHTML =`<h6><b>Wind Speed today is</b> ${data.wind.speed}</h6>` ;	
+						}, 500);
+	};
 </script>
 </body>
 </html>
