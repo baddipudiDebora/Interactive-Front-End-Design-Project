@@ -11,25 +11,20 @@
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
 	<script src="https://kit.fontawesome.com/2a05f92155.js" crossorigin="anonymous"></script>
 	<link rel="stylesheet" href="style.css">
-    <style>
-    body{
-       background-image: url('https://www.srilankaballoon.com/wp-content/uploads/2018/09/Sri-Lanka-Balloon-Hot-Air-Ballooning-Sri-Lanka-1.jpg');
-        background-repeat: no-repeat;
-        background-size: cover;
-    }
+  <style>
     .center-form{
         align-items: center;
         justify-content: center;
     }
     </style>
-        <script type="text/javascript" src="https://cdn.emailjs.com/sdk/2.2.4/email.min.js"></script>
-        <script type="text/javascript">
-                (function() {
-                    emailjs.init("user_kAvWvtrOtx8rIEZBPIf4Y");
-                })();
-        </script>
+		<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@2.3.2/dist/email.min.js"></script>
+			<script type="text/javascript">
+				(function(){
+						emailjs.init("user_kAvWvtrOtx8rIEZBPIf4Y");
+				})();
+			</script>
         </head>
-        <body>
+        <body>	
 
         <header>
         <nav class="navbar navbar-expand-md navbar-light" id="navlist">
@@ -56,7 +51,7 @@
                 <li class="nav-item"><a href="faqs.html" class="nav-link" data-toggle="tooltip" title="FAQs"><i class="fas fa-question-circle"></i></a></li>
                 <li class="nav-item"><a href="contactus.html" class="nav-link">Contact Us</a></li>
                 <li class="nav-item"><a href="sign.html" class="nav-link">Sign-In</a></li>
-                <li class="nav-item"><a href="weatherguide.html" class="nav-link">Wheather Guide</a></li>
+                <li class="nav-item"><a href="TravelEssentials.html" class="nav-link">Travel Essentials</a></li>
             </ul>
             </div>
             </div>
@@ -71,33 +66,16 @@
                 <br>
             <div class="center-form container" id="myform">
             <form onsubmit="return sendMail(this);" method="POST">
-                    <input type="text" name="name" class="form-control" id="fullname" placeholder="Name" required/>
+                    <input type="text" name="from_name" class="form-control" id="fullname" placeholder="Name" required/>
                     <br>
-                    <input type="text" name="emailaddress" class="form-control" id="emailaddress" placeholder="Email" required/>
+                    <input type="text" name="from_email" class="form-control" id="emailaddress" placeholder="Email" required/>
                     <br>
-                    <textarea rows="5" name="projectsummary" class="form-control" id="projectsummary" placeholder="Your Ideal Vacation Description" required></textarea>
+                    <textarea rows="5" name="textareadesc" class="form-control" id="vacationrequest" placeholder="Your Ideal Vacation Description" required></textarea>
                     <br>
                     <button type="submit" class="btn btn-secondary center-block">Send Best Suited Vacation Details</button>
              </form>
             </div>
             </section>
-            <script>
-            function sendMail(contactForm) {
-    emailjs.send("gmail", "deborah", {
-        "from_name": contactForm.name.value,
-        "from_email": contactForm.emailaddress.value,
-        "project_request": contactForm.projectsummary.value
-    })
-    .then(
-        function(response) {
-            console.log("SUCCESS", response);
-        },
-        function(error) {
-            console.log("FAILED", error);
-        }
-    );
-    return false;  // To block from loading a new page
-}
-            </script>
+           <script src="js/script.js"></script>
         </body>
         </html>

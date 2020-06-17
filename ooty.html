@@ -51,7 +51,7 @@
        line-height:18px;
        opacity:0; 
     }
-    .content-boxfoods{
+		  .content-boxrestaurants{
        margin-left:20px;
         width:100%; 
         height:100%;
@@ -60,13 +60,13 @@
         padding: 0 20px;
         margin-bottom:20px;
     }
-    .content-foodBefore{
+    .content-restaurantsBefore{
         font-size: 22px;
         font-family: Roboto;
         text-align:left;
         line-height: 30px;
             }
-    .content-foodAfter{
+    .content-restaurantsAfter{
        display:none;
        font-size: 16px;
        font-family: Roboto;
@@ -75,6 +75,29 @@
        opacity:0; 
     }
     
+		 .content-AccHotels{
+       margin-left:20px;
+        width:100%; 
+        height:100%;
+        border-radius:6px;
+        background-color:#e0be92;
+        padding: 0 20px;
+        margin-bottom:20px;
+    }
+		   .content-AccBefore{
+        font-size: 22px;
+        font-family: Roboto;
+        text-align:left;
+        line-height: 30px;
+            }
+    .content-AccAfter{
+       display:none;
+       font-size: 16px;
+       font-family: Roboto;
+       text-align: left;
+       line-height:18px;
+       opacity:0; 
+    }
 </style>
 <script>
 $(document).ready(function(){
@@ -83,19 +106,27 @@ $(document).ready(function(){
     }, function(){
         $(this).removeClass("highlight");
     });
-          $(".content-boxplaces").click(function(){
+        $(".content-boxplaces").click(function(){
         $(".content-boxplaces").animate({
-            width:'500px',
+            width:'90%',
             height:'100%'
             }, 'fast');
             $(".content-paraAfter").show().animate({opacity:'1'},'slow');
     });
-      $(".content-boxfoods").click(function(){
-        $(".content-boxfoods").animate({
-            width:'500px',
-            height:'100%',
+
+		 $(".content-boxrestuarents").click(function(){
+        $(".content-boxrestuarents").animate({
+            width:'90%',
+            height:'100%'
             }, 'fast');
-            $(".content-foodAfter").show().animate({opacity:'1'},'slow');
+            $(".content-restaurantsAfter").show().animate({opacity:'1'},'slow');
+    });
+				 $(".content-AccHotels").click(function(){
+        $(".content-AccHotels").animate({
+            width:'90%',
+            height:'100%'
+            }, 'fast');
+            $(".content-AccAfter").show().animate({opacity:'1'},'slow');
     });
 });
 </script>
@@ -126,7 +157,7 @@ $(document).ready(function(){
                 <li class="nav-item"><a href="faqs.html" class="nav-link" data-toggle="tooltip" title="FAQs"><i class="fas fa-question-circle"></i></a></li>
                 <li class="nav-item"><a href="contactus.html" class="nav-link">Contact Us</a></li>
                 <li class="nav-item"><a href="sign.html" class="nav-link">Sign-In</a></li>
-                <li class="nav-item"><a href="weatherguide.html" class="nav-link">Wheather Guide</a></li>
+                <li class="nav-item"><a href="TravelEssentials.html" class="nav-link">Travel Essentials</a></li>
             </ul>
             </div>
             </div>
@@ -181,22 +212,23 @@ $(document).ready(function(){
 							</div>
 				</div>   
         <br>     
-	   <div class="row botton-sec section-new">
+   <div class="row botton-sec section-new">
             <div class="col-md-3 content-boxplaces">
-                    <h4 class="content-titleBefore">Click her to see Places to visit</h4>
-                     <p class="content-paraAfter">Avalanche Lake,Ooty Botanical Gardens, Emerald Lake,Doddabetta Peak, Deer park, Mudumalai National Park,Ooty Rose Garden, Ooty Toy train, Toda Huts Ooty,Wax World Ooty ...</p>
-                  </div>
-                 <div class="col-md-5">
-                  <h4 class="title">Some of the Best Accomodations</h4>   
-                   <p>Some of the best hotels to choose from. you can explore more</p>                     
-                 </div>
-	                 <div class="col-md-3 content-boxfoods">
-                   <h4 class="content-foodBefore">Click her for Foods to try in Ooty</h4>
-                  <p class="content-foodAfter">
-                  Chicken Chettinadand "Kozhi Varutharachathu" are sure to be rated among your favorites if you like your chicken on the spicy side. If you happen to be a strict veggie, Avial, a dish made by mixing seven to eight vegetables is one of the all time favorites of the local inhabitants.
-                  </p>
-                 </div>
+								     <h4 class="content-titleBefore">Places to visit</h4>
+								     <p class="content-paraAfter" id="attractionsdata">	 </p>
+            </div>
+            <div class="col-md-4 content-AccHotels">
+                  <h4 class="content-AccBefore">Some best Accomodations </h4>  
+                    <p class="content-AccAfter"  id="hotelsdata"></p>
+             </div>	
+             <div class="col-md-4 content-boxrestaurants">
+                   <h4 class="content-restaurantsBefore">Some Best Restuarents</h4>
+                  <p class="content-restaurantsAfter">
+												<div id="restaurantsdata"></div>
+									 </p>
               </div>
+            </div>
+
       </section>
 
   <footer class="container-fluid">
@@ -240,62 +272,113 @@ $(document).ready(function(){
         </div>
       </div>
  </footer>
-  <script>
-// Initialize and add the map
-function initMap() {
-  var ooty = {lat:11.410000, lng:76.699997};
-	var chhindwara = {lat:22.057163 , lng:78.938202 };
-  var map = new google.maps.Map(
-      document.getElementById('map'), {zoom: 4, center: chhindwara});
-   var marker = new google.maps.Marker({position: ooty, map: map});
-}
-    </script>
-    <!--Load the API from the specified URL
-    * The async attribute allows the browser to render the page while the API loads
-    * The key parameter will contain your own API key (which is not needed for this tutorial)
-    * The callback parameter executes the initMap() function
-    -->
-		<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-		<script>
-  
-var xhr = new XMLHttpRequest();
-var data;
-
-xhr.open("GET", "https://api.openweathermap.org/data/2.5/weather?q=ooty&APPID=08186312a5a64c7bc1c004cd32050ebf&units=metric");
-
-xhr.send();
-
-xhr.onreadystatechange = function() {
-    if (this.readyState == 4 && this.status == 200) {
-        data = JSON.parse(this.responseText);
-    };
-}
-
-setTimeout(function() {
-			document.getElementById("temp-data").innerHTML =`<h6><b>Ooty temp in celsius today is</b> ${data.main.temp}</h6>` ;
-			document.getElementById("feelslike-data").innerHTML =`<h6><b>Feels like </b> ${data.main.feels_like}</h6>` ;
-			document.getElementById("temp_max-data").innerHTML =`<h6><b>Max temp today is</b> ${data.main.temp_max}</h6>` ;
-			document.getElementById("temp_min-data").innerHTML =`<h6><b>Min temp  today is</b> ${data.main.temp_min}</h6>` ;
-			document.getElementById("wind_speed-data").innerHTML =`<h6><b>Wind Speed today is</b> ${data.wind.speed}</h6>` ;	
-			}, 500);
-
-var settings = {
-	"async": true,
-	"crossDomain": true,
-	"url": "https://hotels4.p.rapidapi.com/locations/search?locale=en_US&query=new%20ooty",
-	"method": "GET",
-	"headers": {
-		"x-rapidapi-host": "hotels4.p.rapidapi.com",
-		"x-rapidapi-key": "3b4fcf3834msh88345f9e9a24985p1e68b7jsnf5d6a8d704df"
-	}
-}
-
-$.ajax(settings).done(function (response) {
-	console.log(response);
-});
-</script>
-    <script async defer
+ <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+   <script async defer
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCplBZ7saev3abj_d5Ay4LGwueQMOY-wOM&callback=initMap">
     </script>
+  <script>
+			// Initialize and add the map
+			function initMap() {
+				var ooty = {lat:11.410000, lng:76.699997};
+				var chhindwara = {lat:22.057163 , lng:78.938202 };
+				var map = new google.maps.Map(
+						document.getElementById('map'), {zoom: 4, center: chhindwara});
+				var marker = new google.maps.Marker({position: ooty, map: map});
+			}
+    </script>
+
+		<script>
+			var xhr = new XMLHttpRequest();
+			var data;
+
+			xhr.open("GET", "https://api.openweathermap.org/data/2.5/weather?q=ooty&APPID=08186312a5a64c7bc1c004cd32050ebf&units=metric");
+
+			xhr.send();
+
+			xhr.onreadystatechange = function() {
+					if (this.readyState == 4 && this.status == 200) {
+							data = JSON.parse(this.responseText);
+					};
+			}
+
+			setTimeout(function() {
+						document.getElementById("temp-data").innerHTML =`<h6><b>Ooty temp in celsius today is</b> ${data.main.temp}</h6>` ;
+						document.getElementById("feelslike-data").innerHTML =`<h6><b>Feels like </b> ${data.main.feels_like}</h6>` ;
+						document.getElementById("temp_max-data").innerHTML =`<h6><b>Max temp today is</b> ${data.main.temp_max}</h6>` ;
+						document.getElementById("temp_min-data").innerHTML =`<h6><b>Min temp  today is</b> ${data.main.temp_min}</h6>` ;
+						document.getElementById("wind_speed-data").innerHTML =`<h6><b>Wind Speed today is</b> ${data.wind.speed}</h6>` ;	
+						}, 500);
+
+  </script>
+	<script>
+			var settings = {
+			"async": true,
+			"crossDomain": true,
+			"url": "https://tripadvisor1.p.rapidapi.com/hotels/list?offset=0&currency=USD&limit=30&order=asc&lang=en_US&sort=recommended&location_id=303890&adults=1&checkin=%3Crequired%3E&rooms=1&nights=2",
+			"method": "GET",
+			"headers": {
+				"x-rapidapi-host": "tripadvisor1.p.rapidapi.com",
+				"x-rapidapi-key": "3e1b2b68d1msh65cbdf6a738bd92p1f119cjsn2d12e5e2fb9d"
+			}
+		}
+
+			$.ajax(settings).done(function (response) {
+				var data = response.data;
+
+				data.forEach(function (item){
+										if (item !== undefined){
+					document.getElementById('hotelsdata').innerHTML += "<p>"+ item.name + "</p>";
+										}
+				});
+
+				});
+			
+	</script>
+	<script>
+			var settings = {
+			"async": true,
+			"crossDomain": true,
+			"url": "https://tripadvisor1.p.rapidapi.com/restaurants/list?restaurant_tagcategory_standalone=10591&lunit=km&restaurant_tagcategory=10591&dietary_restrictions=Indian&limit=7&min_rating=4.5&currency=USD&lang=en_US&restaurant_dining_options=Reservations&location_id=303890",
+			"method": "GET",
+			"headers": {
+				"x-rapidapi-host": "tripadvisor1.p.rapidapi.com",
+				"x-rapidapi-key": "3e1b2b68d1msh65cbdf6a738bd92p1f119cjsn2d12e5e2fb9d"
+			}
+		}
+
+			$.ajax(settings).done(function (response) {
+			var data = response.data;
+
+		data.forEach(function (item){
+								if (item !== undefined){
+			document.getElementById('restaurantsdata').innerHTML += "<p>"+ item.name + "</p>";
+								}
+		});
+
+			});
+		</script>
+		<script>
+			var settings = {
+				"async": true,
+				"crossDomain": true,
+				"url": "https://tripadvisor1.p.rapidapi.com/attractions/list?lang=en_US&currency=USD&sort=ranking_position&lunit=10%20km&min_rating=4&limit=15&subcategory=Sights%20%2526%20Landmarks&location_id=303890",
+				"method": "GET",
+				"headers": {
+					"x-rapidapi-host": "tripadvisor1.p.rapidapi.com",
+					"x-rapidapi-key": "3e1b2b68d1msh65cbdf6a738bd92p1f119cjsn2d12e5e2fb9d"
+				}
+			}
+
+				$.ajax(settings).done(function (response) {
+				var data = response.data;
+
+			data.forEach(function (item){
+									if (item !== undefined){
+				document.getElementById('attractionsdata').innerHTML += "<p>"+ item.name + "</p>";
+									}
+			});
+
+				});
+		</script>
   </body>
 </html>
