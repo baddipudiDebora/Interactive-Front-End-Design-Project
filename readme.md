@@ -1,25 +1,23 @@
 # Interactive Frontend Development Milestone Project
-A One Stop solution for your memoriable Vacation. Right from Flight / Tain or Bus Bookings to booking a local Guide, we take care.
+A One Stop solution for your memoriable Vacation. Right from Weather Guide / List of Accomodation / Attractions / Resturaents / Forex Converstions / Holiday planner with your country holiday list we take care.
 
 
 ## UX - Requirements
 ## 1. Strategy Plane
-  	* Get potential travellers and tourism industry on a single potal to facilitate efficient and effective process.
+  	* Get potential travellers and tourism industry on a single potal to facilitate efficient and effective Travel Planning and Smooth Execution.
 
-  	* Boost the tourism/hospitality industry with travellers from around the world by showcasing the potential places to spend 
-	ones holiday.
+  	* Boost the tourism/hospitality industry with travellers from around the world by showcasing the potential places to spend ones holiday.
 	
 
 #### User Needs Objectives :-
- 	* Providing a browser-based front end for travel booking from the Internet, existing Traveler’s office centers will also 
-	provide access from the same new website.
+ 	* Providing a browser-based front end for travel booking from the Internet, existing Traveler’s office centers will also 	provide access from the same new website.
 	
 #### Business Objectives :-
 	1.Automating a currently manual process, and allowing travel inquiries and applications from the Internet and via 
 	call center personnel.
 	2.Decreasing the time to process the travel enquire from approximately 30 minutes to 5 minutes. 
 	This will TravelIndia to dramatically increase the volumes of travel booking processed to meet its business plan.
- 	3.Providing online travel status. This will allow TravelIndia customercare to rapidly and accurately respond 
+  3. Providing online travel status. This will allow TravelIndia customercare to rapidly and accurately respond 
 	to customer inquiries both prior to and during the travel of the customer.
 	4.Need to collect questionnaire from users on What makes a good holiday travel booking experience? 
 	5.Some quotes to make user select our travel packages over our competitors we need to have some catchy and 
