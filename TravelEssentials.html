@@ -47,7 +47,7 @@
                </button>
                <div class="collapse navbar-collapse justify-content-end" id="navbarCollapse">
                   <ul class="nav navbar-nav ml-auto">
-                     <li class="nav-item"><a href="index.html" class="nav-link" data-toggle="tooltip" title="Home Page!" onmouseover="MouseOver(this);" onmouseout="MouseOut(this);"><i class="fas fa-house-user"></i></a></li>
+                     <li class="nav-item"><a href="index.html" class="nav-link" data-toggle="tooltip" title="Home Page!" ><i class="fas fa-house-user"></i></a></li>
                      <li class="nav-item dropdown">
                         <a data-toggle="dropdown" class="nav-link dropdown-toggle" href="#" >Trending Tours<b class="caret"></b></a>
                         <ul class="dropdown-menu honymoon_holiday_submenu mega_menu_header_titles mega_menu_header_titles_no_top">
@@ -139,7 +139,7 @@
                <label for="country">Enter your Country Code 2 letter foramt like CA for Canada</label>
                <input type="text" id="country" name="country"><br><br>
                <label for="year">Enter the year for Holiday list</label><br>
-               <input type="text" id="year" name="year"><br><br>
+               <input type="number" id="year" name="year"><br><br>
                <input class="btn btn-success" type="submit" value="Submit">
             </form>
             <br>
@@ -209,44 +209,54 @@
          		};
       </script>
       <script>
-         function writeHolidayList(country, year){
+       function writeHolidayList(country, year){
          	var dataarray;
               const baseURL = "https://calendarific.com/api/v2/holidays?&api_key=83d13f37e76f899007ec577298954f12e46c87fe&country="+country+"&year="+year;
                 var xhr = new XMLHttpRequest();
-                xhr.open("GET", baseURL);
+							     xhr.open("GET", baseURL);
                     xhr.send();
-         		        xhr.onreadystatechange = function(){ 
-                     if (this.readyState == 4 && this.status == 200) {
-         						 var data = JSON.parse(this.responseText);
-         					 dataarray = data.response.holidays;
-         						dataarray.forEach(function(item){
+										xhr.onreadystatechange = function(){ 
+										   if (this.readyState == 4 && this.status == 200) {
+											var data = JSON.parse(this.responseText);
+											// to alert the user when an invalid data is entered 
+												if (data.meta.error_type !== "call failed"){
+													 dataarray = data.response.holidays;
+         									 dataarray.forEach(function(item){
          									 document.getElementById("holidayName").innerHTML += `<h6>${item.name}</h6>` ; 
          								 	 document.getElementById("holidayDate").innerHTML += `<h6>${item.date.iso}</h6>` 
          							});	
-         		};
+											}
+											else {
+												alert("Invalid Country or Year Date, please check and try again");
+											}
+         	    		};
          		};
          		};
       </script>
       <script>
-         function	fetchWeatherData(place){
+          function	fetchWeatherData(place){
            		var xhr = new XMLHttpRequest();
          			var baseURL = "https://api.openweathermap.org/data/2.5/weather?q="+place+"&APPID=08186312a5a64c7bc1c004cd32050ebf&units=metric"
          			var data;
          			xhr.open("GET", baseURL);
          			xhr.send();
+							
          				xhr.onreadystatechange = function() {
-         					if (this.readyState == 4 && this.status == 200) {
-         							data = JSON.parse(this.responseText);
-         						console.log(data);
-         								}; 			}
-         			setTimeout(function() {
-         						document.getElementById("temp-data").innerHTML =`<h6><b>Temp in celsius today is</b> ${data.main.temp}</h6>` ;
-         						document.getElementById("feelslike-data").innerHTML =`<h6><b>Feels like </b> ${data.main.feels_like}</h6>` ;
-         						document.getElementById("temp_max-data").innerHTML =`<h6><b>Max temp today is</b> ${data.main.temp_max}</h6>` ;
-         						document.getElementById("temp_min-data").innerHTML =`<h6><b>Min temp  today is</b> ${data.main.temp_min}</h6>` ;
-         						document.getElementById("wind_speed-data").innerHTML =`<h6><b>Wind Speed today is</b> ${data.wind.speed}</h6>` ;	
-         						}, 500);
-         	};
+										if (this.readyState !== 404 && this.status == 200) {
+									  		data = JSON.parse(this.responseText);  // parsing the response tect to an object
+												document.getElementById("temp-data").innerHTML =`<h6><b>Temp in celsius today is</b> ${data.main.temp}</h6>` ;
+												document.getElementById("feelslike-data").innerHTML =`<h6><b>Feels like </b> ${data.main.feels_like}</h6>` ;
+												document.getElementById("temp_max-data").innerHTML =`<h6><b>Max temp today is</b> ${data.main.temp_max}</h6>` ;
+												document.getElementById("temp_min-data").innerHTML =`<h6><b>Min temp  today is</b> ${data.main.temp_min}</h6>` ;
+												document.getElementById("wind_speed-data").innerHTML =`<h6><b>Wind Speed today is</b> ${data.wind.speed}</h6>` ;	
+										} 	// end of if  success block to parse responce to data object
+										else {
+													alert("Invalid city name");	
+												}
+										}  // end of checking if code is undefined
+   							 // end of onreadystatechange function 
+         	}; // end of main function
       </script>
    </body>
 </html>
+		
