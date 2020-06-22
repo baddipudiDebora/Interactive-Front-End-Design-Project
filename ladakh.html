@@ -78,7 +78,7 @@
             </div>
             <div class="col-md-2 city-weather">
                <h4 class="title">Weather: </h4>
-               <p class="d-md-none d-lg-block">
+							    <p class="d-md-none d-lg-block">
                   Ladakh weather is no mystery to the travelers for its extreme nature. From temperature variation of -20 degrees to 22 degrees Celsius throughout the year.
                </p>
                <div id="weatherdata" onload="fetchWeatherData()"></div>
@@ -151,36 +151,38 @@
       <script async defer
          src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCplBZ7saev3abj_d5Ay4LGwueQMOY-wOM&callback=initMap"></script>
       <script>
+				    // Initialize and add the map
          function initMap() {
+					// define location of ladakh
            var ladakh = {lat:34.209515, lng:77.615112};
-         
-           var map = new google.maps.Map(
+          // load the map and zoom it to ladakh
+					 var map = new google.maps.Map(
                document.getElementById('map'), {zoom: 4, center: ladakh});
+					// point a marker at ladakh
             var marker = new google.maps.Marker({position: ladakh, map: map});
          }
-             
       </script>
       <script>
+				// api code from openweathermap for weatherdata
          var xhr = new XMLHttpRequest();
          var data;
-         
          xhr.open("GET", "https://api.openweathermap.org/data/2.5/weather?q=lei&APPID=08186312a5a64c7bc1c004cd32050ebf&units=metric");
-         
          xhr.send();
          xhr.onreadystatechange = function() {
          		if (this.readyState == 4 && this.status == 200) {
          				data = JSON.parse(this.responseText);
          		};
          }
-         
-         setTimeout(function() {
-         				document.getElementById("temp-data").innerHTML =`<h6><b>Lei, Ladahk temp in celsius today is </b>${data.main.temp}</h6>` ;
+				 // traversing within the array and fetching like data.main.temp and storing to an element
+           setTimeout(function() {
+         			document.getElementById("temp-data").innerHTML =`<h6><b>Lei, Ladahk temp in celsius today is </b>${data.main.temp}</h6>` ;
          			document.getElementById("feelslike-data").innerHTML =`<h6><b>Feels like </b>${data.main.feels_like}</h6>` ;
          			document.getElementById("temp_max-data").innerHTML =`<h6><b>Max temp today is </b>${data.main.temp_max}</h6>` ;
          			document.getElementById("temp_min-data").innerHTML =`<h6><b>Min temp  today is </b>${data.main.temp_min}</h6>` ;
          			}, 500);
       </script>
       <script>
+					// api code from rapidAPI for hotelsdata
          var settings = {
          "async": true,
          "crossDomain": true,
@@ -194,17 +196,17 @@
          
          $.ajax(settings).done(function (response) {
          var data = response.data;
-         
+         // for each item in the array passing data to the element with ID hotelsdata 
+				 // +=  concatenates the current results to the array    
          data.forEach(function (item){
          				if (item !== undefined){
          	document.getElementById('hotelsdata').innerHTML += "<p>"+ item.name + "</p>";
          	}
          });
-         
-         });
-         		
+       });
       </script>
       <script>
+				// api code from rapidAPI for restaurantsdata
          var settings = {
          "async": true,
          "crossDomain": true,
@@ -214,9 +216,8 @@
          	"x-rapidapi-host": "tripadvisor1.p.rapidapi.com",
          	"x-rapidapi-key": "3e1b2b68d1msh65cbdf6a738bd92p1f119cjsn2d12e5e2fb9d"
          }
-         }
-         
-         	$.ajax(settings).done(function (response) {
+         };
+        $.ajax(settings).done(function (response) {
          	var data = response.data;
          
          data.forEach(function (item){
@@ -224,11 +225,10 @@
          	document.getElementById('restaurantsdata').innerHTML += "<p>"+ item.name + "</p>";
          				}
          });
-         
-         	});
-         	
+     	});
       </script>
       <script>
+				// code from rapidAPI for attractionsdata
          var settings = {
          	"async": true,
          	"crossDomain": true,
@@ -238,18 +238,17 @@
          		"x-rapidapi-host": "tripadvisor1.p.rapidapi.com",
          		"x-rapidapi-key": "3e1b2b68d1msh65cbdf6a738bd92p1f119cjsn2d12e5e2fb9d"
          	}
-         }
-         
+         };
          	$.ajax(settings).done(function (response) {
          	var data = response.data;
-         
+          // for each item in the array passing data to the element with ID attractionsdata 
+				  // +=  concatenates the current results to the array  
          data.forEach(function (item){
          				if (item !== undefined){
          	document.getElementById('attractionsdata').innerHTML += "<p>"+ item.name + "</p>";
          				}
          });
-         
-         	});
+     	});
       </script>
    </body>
 </html>
