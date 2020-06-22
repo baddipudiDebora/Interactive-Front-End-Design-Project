@@ -151,39 +151,39 @@
       <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
       <script async defer
          src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA8ejWItclFaossvyk9mFqGnFicxEOiFic&callback=initMap"></script>
-      <script>
-         // Initialize and add the map
-         		function initMap() {
+			  <script>
+             // Initialize and add the map
+         function initMap() {
+					// define location of delhi
          			var delhi = {lat:28.644800, lng:77.216721};
          			var map = new google.maps.Map(
-         					document.getElementById('map'), {zoom: 4, center: delhi});
+							 // to center and focus the map to delhi
+         				document.getElementById('map'), {zoom: 4, center: delhi});
+								 // to place a marker on location kanyakumari
          			var marker = new google.maps.Marker({position: delhi, map: map});
          		}
-             
       </script>
       <script>
+				// code from API
          var xhr = new XMLHttpRequest();
          var data;
-         
          xhr.open("GET", "https://api.openweathermap.org/data/2.5/weather?q=delhi&APPID=08186312a5a64c7bc1c004cd32050ebf&units=metric");
-         
-         xhr.send();
-         
-         xhr.onreadystatechange = function() {
+        xhr.send();
+        xhr.onreadystatechange = function() {
              if (this.readyState == 4 && this.status == 200) {
                  data = JSON.parse(this.responseText);
              };
          }
-         
+         // traversing within the array and fetching like data.main.temp and storing to an element
          setTimeout(function() {
          document.getElementById("temp-data").innerHTML =`<h6><b>Delhi temp in celsius today is</b> ${data.main.temp}</h6>` ;
          document.getElementById("feelslike-data").innerHTML =`<h6><b>Feels like </b> ${data.main.feels_like}</h6>` ;
          document.getElementById("temp_max-data").innerHTML =`<h6><b>Max temp today is</b> ${data.main.temp_max}</h6>` ;
          document.getElementById("temp_min-data").innerHTML =`<h6><b>Min temp  today is</b> ${data.main.temp_min}</h6>` ;
          }, 500);
-         
       </script>
       <script>
+					// api code from rapidAPI 
          var settings = {
          "async": true,
          "crossDomain": true,
@@ -193,21 +193,20 @@
          	"x-rapidapi-host": "tripadvisor1.p.rapidapi.com",
          	"x-rapidapi-key": "3e1b2b68d1msh65cbdf6a738bd92p1f119cjsn2d12e5e2fb9d"
          }
-         }
-         
-         $.ajax(settings).done(function (response) {
+         };
+          $.ajax(settings).done(function (response) {
          var data = response.data;
-         
+         // for each item in the array passing data to the element with ID hotelsdata 
+				 // +=  concatenates the current results to the array          
          data.forEach(function (item){
          	if (item !== undefined){
          		document.getElementById('hotelsdata').innerHTML += "<p>"+ item.name + "</p>";
-         	};
+         	}
          });
-         
-         });
-         		
+      });
       </script>
       <script>
+				// api code from rapidAPI 
          var settings = {
          "async": true,
          "crossDomain": true,
@@ -217,21 +216,20 @@
          	"x-rapidapi-host": "tripadvisor1.p.rapidapi.com",
          	"x-rapidapi-key": "3e1b2b68d1msh65cbdf6a738bd92p1f119cjsn2d12e5e2fb9d"
          }
-         }
-         
+         };
          	$.ajax(settings).done(function (response) {
          	var data = response.data;
-         
+           // for each item in the array passing data to the element with ID restaurantsdata 
+				   // +=  concatenates the current results to the array  
          data.forEach(function (item){
          	if (item.name !== undefined){
          		document.getElementById('restaurantsdata').innerHTML += "<p>"+ item.name + "</p>";
-         	};
+         	}
          });
-         
-         	});
-         	
+     	});
       </script>
       <script>
+				// code code from rapidAPI
          var settings = {
          	"async": true,
          	"crossDomain": true,
@@ -241,18 +239,17 @@
          		"x-rapidapi-host": "tripadvisor1.p.rapidapi.com",
          		"x-rapidapi-key": "3e1b2b68d1msh65cbdf6a738bd92p1f119cjsn2d12e5e2fb9d"
          	}
-         }
-         
+         };
          	$.ajax(settings).done(function (response) {
          	var data = response.data;
-         
-         data.forEach(function (item){
+          // for each item in the array passing data to the element with ID attractionsdata 
+				  // +=  concatenates the current results to the array  
+          data.forEach(function (item){
          	if (item.name !== undefined){
          		document.getElementById('attractionsdata').innerHTML += "<p>"+ item.name + "</p>";
-         	};
+         	}
          });
-         
-         	});
+     	});
       </script>
    </body>
 </html>
