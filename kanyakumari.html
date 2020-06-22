@@ -148,17 +148,21 @@
       <script>
          // Initialize and add the map
          function initMap() {
+					// define location of kanyakumari
          	var kanyakumari = {lat:8.088306, lng:77.538452};
+				// define location of hyderabad
          	var hyderabad = {lat:17.3850 , lng:78.4867 };
          	var map = new google.maps.Map(
+			 // to center and focus the map to hyderabad
          			document.getElementById('map'), {zoom: 4, center: hyderabad});
+			// to place a marker on location kanyakumari
          	var marker = new google.maps.Marker({position: kanyakumari, map: map});
          }
-         
-           
+
       </script>
       <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
       <script>
+				// code from API
          var xhr = new XMLHttpRequest();
          var data;
          xhr.open("GET", "https://api.openweathermap.org/data/2.5/weather?q=kanyakumari&APPID=08186312a5a64c7bc1c004cd32050ebf&units=metric");
@@ -166,7 +170,9 @@
          xhr.onreadystatechange = function() {
          	if (this.readyState == 4 && this.status == 200) {
          			data = JSON.parse(this.responseText);
-         	}; 			}
+         	}
+         	};
+    	 // traversing within the array and fetching like data.main.temp and storing to an element
          setTimeout(function() {
          		document.getElementById("temp-data").innerHTML =`<h6><b>Kanyakumari temp in celsius today is</b> ${data.main.temp}</h6>` ;
          		document.getElementById("feelslike-data").innerHTML =`<h6><b>Feels like </b> ${data.main.feels_like}</h6>` ;
@@ -178,7 +184,8 @@
       <script async defer
          src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCplBZ7saev3abj_d5Ay4LGwueQMOY-wOM&callback=initMap"></script>
       <script>
-         var settings = {
+				// api code from rapidAPI 
+          var settings = {
          		"async": true,
          		"crossDomain": true,
          		"url": "https://tripadvisor1.p.rapidapi.com/hotels/list?offset=0&currency=USD&limit=10&order=asc&lang=en_US&sort=recommended&location_id=608476&adults=1&checkin=%3Crequired%3E&rooms=1&nights=2",
@@ -187,10 +194,11 @@
          			"x-rapidapi-host": "tripadvisor1.p.rapidapi.com",
          			"x-rapidapi-key": "3e1b2b68d1msh65cbdf6a738bd92p1f119cjsn2d12e5e2fb9d"
          		}
-         	}
+         	};
          		$.ajax(settings).done(function (response) {
          		var data = response.data;
-         
+         // for each item in the array passing data to the element with ID hotelsdata 
+				 // +=  concatenates the current results to the array  
          		data.forEach(function (item){
          					if (item !== undefined){
          			document.getElementById('hotelsdata').innerHTML += "<p>"+ item.name + "</p>";
@@ -198,10 +206,10 @@
          		});
          
          		});
-         		
       </script>
       <script>
-         var settings = {
+				// api code from rapidAPI 
+        var settings = {
          "async": true,
          "crossDomain": true,
          "url": "https://tripadvisor1.p.rapidapi.com/restaurants/list?restaurant_tagcategory_standalone=10591&lunit=km&restaurant_tagcategory=10591&dietary_restrictions=Indian&limit=7&min_rating=4.5&currency=USD&lang=en_US&restaurant_dining_options=Reservations&location_id=608476",
@@ -210,11 +218,12 @@
          	"x-rapidapi-host": "tripadvisor1.p.rapidapi.com",
          	"x-rapidapi-key": "3e1b2b68d1msh65cbdf6a738bd92p1f119cjsn2d12e5e2fb9d"
          }
-         }
+         };
          
          	$.ajax(settings).done(function (response) {
          	var data = response.data;
-         
+         // for each item in the array passing data to the element with ID restaurantsdata 
+				 // +=  concatenates the current results to the array  
          data.forEach(function (item){
          	{
          	document.getElementById('restaurantsdata').innerHTML += "<p>"+ item.name + "</p>";
@@ -222,9 +231,9 @@
          });
          
          	});
-         	
       </script>
       <script>
+				// api code from rapidAPI 
          var settings = {
          	"async": true,
          	"crossDomain": true,
@@ -234,11 +243,12 @@
          		"x-rapidapi-host": "tripadvisor1.p.rapidapi.com",
          		"x-rapidapi-key": "3e1b2b68d1msh65cbdf6a738bd92p1f119cjsn2d12e5e2fb9d"
          	}
-         }
+         };
          
          	$.ajax(settings).done(function (response) {
          	var data = response.data;
-         
+         // for each item in the array passing data to the element with ID attractionsdata 
+				 // +=  concatenates the current results to the array  
          data.forEach(function (item){
          			if (item !== undefined){
          	document.getElementById('attractionsdata').innerHTML += "<p>"+ item.name + "</p>";
