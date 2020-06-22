@@ -4,10 +4,19 @@ Enjoy Your Holiday - Is is One Stop solution for your memoriable Vacation. Right
 
 ## UX - Requirements
 ## 1. Strategy Plane
-  	* Get potential travellers and tourism industry on a single potal to facilitate efficient and effective Travel Planning and Smooth Execution.
+  	* The target audiance Holiday seekers planning on a small budget Vacation. This Website  displays some trending tours and adventorous places.
+		
+		* Get potential travellers and tourism industry on a single potal to facilitate efficient and effective Travel Planning and Smooth Execution.
 
   	* Boost the tourism/hospitality industry with travellers from around the world by showcasing the potential places within budget of everyone to spend ones holiday.
 	
+	##### Epics (high level User Stories would include)
+		1. As a Holiday Seeker, I want to view various potential holiday locations, so that I can select one.
+		2. As a Holiday Seeker, I want to view various details of potential holiday locations, so that I can be prepared.
+		3. As a Holiday Seeker, I want to view various adventorous holiday location, so that I can select one.
+		4. As a Holiday Seeker, I want to view weather , Forex, my native country holiday, so that I can plan in advance.
+		5. As a Holiday Seeker, I want to Contact Travel Agent, so that I can proceed with getting further informations.
+		6. As a Holiday Seeker, I want to Download Holiday Brocher, so that I can get an Idea of the travel agent sevices.
 
 #### User Needs Objectives :-
  	* Providing a browser-based front end application where potential travelers can get info on  Weather, search for list of Accomodation / Attractions / Resturaents / Forex Converstions /  holiday list of local country and some potential destinations withinthe budget reach of many.
@@ -28,16 +37,17 @@ Enjoy Your Holiday - Is is One Stop solution for your memoriable Vacation. Right
 	2. A registration system for potential travellers / Tour Guide / Travel Agent
 	3. A system for Travel agents and Guides to view packages and dates allocated to them
 	4. Timely and accurate weather information to travelers, guide and the TravelIndia corporation
-	5. To show we are an expert in conducting tours around in and around India the website should host some Video tutorials on travel precautions, checklist, testimonials and frequently asked questions, and sending invite to signedup users on upcomming webinars.
 
-	Features off the table for current release -
+
+###	Features off the table for current release -
 	1. Adding services / Travel Pacakages to shopping cart and Online payment
 	2. Admin login features such as, to add new tour Packages and applying sesonal discounts on particular packages
 	3. Approve / Reject  / Block paticular guide based on cutomer complaints
 	4. Sign-In / Sign-Up
 	5. Tour Guide / Travel Agent Login to view their allocated tours 
+	6. To show we are an expert in conducting tours around in and around India the website should host some Video tutorials on travel precautions, checklist, testimonials and frequently asked questions, and sending invite to signedup users on upcomming webinars.
 	
-	The current release would be in 3 months duration , consisting of 3 sprints.
+####	The current release would be in 3 months duration , consisting of 3 sprints.
 	
 		Sprint 1 - Landing Page , Sign Up/ Sign-In page (only page design not email validation for sign -in) / Trending Tours page 
 		
@@ -51,10 +61,10 @@ Enjoy Your Holiday - Is is One Stop solution for your memoriable Vacation. Right
 	User Friendly navbar and footer across all pages. Multiple windows allow different information to be displayed simultaneously on the user's screen.
 	
 	Typical features could include:
-	1. Displaying 
+	Displaying Trending Tours, Adventrous tours, Contact Us , Some APIs to fetch dynamic data (weather, attractions , Resturaents, Accomodations , Forex, Holiday Calander)
 
 ### Interoperability and fully functional on Mozilla / IE and Chrome
-### Compatability tested for responsive Desktop / Laptop / IPad / IPhone6
+### Compatability tested for responsive Desktop / Laptop / IPad / Mobile (iPhone 6/7/8 , Galaxy s5, moto G4 Version)
 
 ## 4. Skeleton Plane
 #### Interface Design
@@ -75,45 +85,43 @@ Enjoy Your Holiday - Is is One Stop solution for your memoriable Vacation. Right
 		But that’s okay. We’ll take care the journey, be with your throughout and make sure it leaves good marks on your memory, on your consciousness, on your heart, and on your body. You take something with you. Hopefully, you leave something good behind.”
 
 ## 5. Surface Plane
-
-
-### List of User Stories:
+### List of Use Cases:
 Ideal new user flow would be represented by the following use case (Actor represent an ideal future user)
 
-	#### User Story 1 -  Trending Tours page
+	#### Use Case 1 -  Trending Tours page
 		Actor: Enters the Application url
 		System: Loads the landing page with Hero Image with motivating quotue 
 		Actor: Clicks on Trending tours menu in the navbar
 		System: displays the page with the 4 trending tours on our website
 		System: displays picture of the city, short description, video of places to visit, weather of the city on that day, top attractions / places to visit, restaurants, Accomodations (latest data from API dynamically) 
 
-	#### User Story 2 - Contact Up Page
+	#### Use Case 2 - Contact Up Page
 		Actor: click ContactUS in the nav bar
 		Sytem: Directs user to ContactUS page
 		Actor: Fills the ContactUs Page with his/ her detais and needed information and clicks on submit
 		System: Sends the mail to the Travel Agent with details filled in the form
 	
-	#### User Story 3 - FAQs page
+	#### Use Case 3 - FAQs page
 		Actor: clicks on FAQs icon in navbar
 		System: System displays Frequently asked Questions of travellers
 	
-	#### User Story 4 - Adventure Tours page
+	#### Use Case 4 - Adventure Tours page
 		Actor: clicks on Adventure Tours in navbar
 		System: System displays popular adventures in tabular format
 
-	#### User Story 5 - Travel Essentials (Forex calculator)
+	#### Use Case 5 - Travel Essentials (Forex calculator)
 		Actor: clikcs on Travel Essentials Page
 		System: displayes three sections - Forex calculator /  Holiday list of a company / Weather details based city 
 		Actor: enters a currency code and amount needed to convert 
 		System: displays the total in INR after conversion for that day
 
-	#### User Story 6 - Travel Essentials (Holiday Calender)
+	#### Use Case 6 - Travel Essentials (Holiday Calender)
 		Actor: clikcs on Travel Essentials Page
 		System: displayes three sections - Forex calculator /  Holiday list of a company / Weather details based city 
 		Actor: enters a country code and year 
 		System: displays the Holidays of that year for that country
 
-	#### User Story 7 - Travel Essentials (Weather Guide)
+	#### Use Case 7 - Travel Essentials (Weather Guide)
 		Actor: clikcs on Travel Essentials Page
 		System: displayes three sections - Forex calculator /  Holiday list of a company / Weather details based city 
 		Actor: enters a city name 
@@ -122,54 +130,82 @@ Ideal new user flow would be represented by the following use case (Actor repres
 
 ### Wire Frame and UX design
 
-#### each of 4 holiday destination page wireframe
-
-![location page wireframe](https://user-images.githubusercontent.com/64851336/83449083-fedc9880-a420-11ea-8842-4337efb499eb.JPG)
-
-
-##### please refer link below
+#### link to wireframe of Desktop/ Tab and mobile view
+![location page wireframe]
+(https://repl.it/@DeborahBS/Interactive-Front-End-Design-Project#Docs/WireFrames-%20Travel%20India-converted.pdf)
 
 
 ## Features
-### Existing Features
 
+### Existing Features
+  1. View landing page and customer testimonials 
+	2. A Trending tour page with details of City, Picture, Video, Google Map, Dynamic data of weather, attractions, Resturaents, Accomodations
+	3. An Adventrous tour pacakages page to display various locations detials, picture and short description.
+	4. Contact Us page to get intouch with TravelIndia corporation
+	5. FAQs page
 
 ### Features Left to Implement
-1.	
+1. Sign-In / Sign/Up
+2. Add travel package to cart
+3. Live chat with customer service
+4. Online payment for booking
+5. Admin login
+6. Tour guide login
 
-##Technologies Used
+### Technologies Used
 * The project uses HTML to add content to the website.
 * The project used CSS to style the content.
-* The project used BootStrap 4  to have reusable CSS styling.
+* The project used BootStrap 4  to have reusable CSS styling and make tyhe site responsive.
 * Icons / Images were taken from Font-Awesome website
 * Styling was taken from Google fonts 
-* Used JQuery Accordian
+* Used JQuery to simplify DOM manipulation.
+* APIs 	(to fetch data dynamically)
+	- Google Maps
+	- emailJS
+	- OpenWeatherMap
+	- API for Attractions / Restaurants / Accomodations by APIDojo.net
+	- Forex calculator
+	- Holiday Calander
 
-Testing
-XML Validator  - Verified
 
-CSS Validator – Verified 
+## Testing
 
+#### XML Validator  - Verified
+* Used HTML Validator from W3Schools and attached each page results
+
+
+### CSS Validator – Verified 
+* Used CSS Validator from W3Schools and attached each page results
+
+Test Strategy includes UI testing and API testing. For UI testing some are manual and some UI features are Automated using Selenium. API testing is tested using Protactor with Jasmine.
 
 ### Manual Testing
 Testing has been performed to verify and validate the software as per the requirements.
-Manual Testing performed to test the below user stories
-1.	
+Manual Testing performed for the below test senarios 
+1.	Checking if mail recieved from the ContactUS form, with the detials from entered by the user.
+2.  Check if all the pages layout is as perthe wireframes from the UX design
+3.  Check for responsiveness on different devices
+4.  Check when user entered invalid data system displays approximate error message
+
+Manual testing for data generated by API and Screenshots can be found here
 
 
 ### Automated unit testing using open source tool selenium to test the below features
-1.	Testing
+1.	Check if all the pages link is functional by clicking on the link and checking the title of the page
+
+please find the automaton setup and scripts resourses here 
 
 
+### API testing using PostMan or Protactor with Jasmine is work in progress, will update once completed
 
-
-##### please refer Github link below.
-
-[GitHub](https://github.com/baddipudiDebora/Mini-Project/blob/master/Automation%20-%20Educate%20All.pdf)
  
 ## How your project looks and works on different browsers and screen sizes
-    The website is designed with bootstrap hence mobile friendly by default.
-  
+  -  The website is designed with bootstrap and is tested for responsiveness on Desktop / Laptop /Tablet /Mobile View.
+
+ - Please check the attached Wireframes PDF on different devises from the UX requirements section
+
+ - Please check the attached Screenshots on different devices
+
 
 ###    It has been tested for iphone6/7/8 , also in iPad. 
   ##### please refer Github link below.
@@ -177,28 +213,21 @@ Manual Testing performed to test the below user stories
 
 
 ## Any interesting bugs or problems you discovered during your testing, even if you haven't addressed them yet.
-
-
+- though i have added a loop to check for undefined - still displaying undefined in kanyakumari restaurants list fetched from API
 
 ## Deployment
 Code was written in replit and pushed on regular basis to github account.
 
+
+
 #### the published github page is below
 
-[GitHub](https://baddipudidebora.github.io/Mini-Project/)
-
-
+[GitHub](https://baddipudidebora.github./)
 
 ## Credits
 ### Content
-    The text for call out section was copied from the 
-
-
-
-###  Media
-    The photos used in this site were obtained from ...
-   
-	 
+    Most of the text was copied from the Wikipedia of the locations
+ 
 
 ## Acknowledgements
     I received inspiration for this project  

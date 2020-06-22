@@ -88,8 +88,7 @@
                   <div id="feelslike-data"></div>
                   <div id="temp_max-data"></div>
                   <div id="temp_min-data"></div>
-                  <div id="wind_speed-data"></div>
-               </div>
+                </div>
             </div>
          </div>
          <br>     
@@ -182,7 +181,6 @@
          			document.getElementById("feelslike-data").innerHTML =`<h6><b>Feels like </b> ${data.main.feels_like}</h6>` ;
          			document.getElementById("temp_max-data").innerHTML =`<h6><b>Max temp today is</b> ${data.main.temp_max}</h6>` ;
          			document.getElementById("temp_min-data").innerHTML =`<h6><b>Min temp  today is</b> ${data.main.temp_min}</h6>` ;
-         			document.getElementById("wind_speed-data").innerHTML =`<h6><b>Wind Speed today is</b> ${data.wind.speed}</h6>` ;	
          			}, 500);
          
       </script>

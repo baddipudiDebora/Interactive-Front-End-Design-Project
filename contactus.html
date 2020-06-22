@@ -15,10 +15,18 @@
    <script src="https://kit.fontawesome.com/2a05f92155.js" crossorigin="anonymous"></script>
    <link rel="stylesheet" href="css/style.css">
    <style>
-      .center-form{
+		// to fix the card and footer as page content. vh which is relative sixe is used to have it responsive
+      .contactusform{
       align-items: center;
       justify-content: center;
+		
       }
+
+			.footer-details
+			{
+				position: absolute;
+			}
+
    </style>
    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@2.3.2/dist/email.min.js"></script>
    <script>
@@ -57,7 +65,7 @@
       </nav>
    </header>
    <br>
-   <section class="container">
+   <section class="container contactusform" style="min-height: 78vh">
       <div style="text-align:center">
          <h3 class="contact-heading uppercase text-center">Got a vacation in Mind?</h3>
          <h5 class="uppercase text-center">Get in tough with us</h5>

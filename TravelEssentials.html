@@ -193,8 +193,10 @@
       <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
       <script>
          function writeToDocument(curr) {
+					 // store the URI to access the API to an constant
          const baseURL = "https://api.exchangeratesapi.io/latest?base=";
          var xhr = new XMLHttpRequest();
+				 // use GET method to read data from the API though the URI, concatinate URI with the pramater curr passed by user 
          	xhr.open("GET", baseURL + curr);
          			xhr.send();
          			xhr.onreadystatechange = function() {
@@ -211,8 +213,10 @@
       <script>
        function writeHolidayList(country, year){
          	var dataarray;
+					 	 // store the URI to access the API to an constant, and concatinate with prameters passed
               const baseURL = "https://calendarific.com/api/v2/holidays?&api_key=83d13f37e76f899007ec577298954f12e46c87fe&country="+country+"&year="+year;
                 var xhr = new XMLHttpRequest();
+						 // use GET method to read data from the API though the URI
 							     xhr.open("GET", baseURL);
                     xhr.send();
 										xhr.onreadystatechange = function(){ 
@@ -236,12 +240,12 @@
       <script>
           function	fetchWeatherData(place){
            		var xhr = new XMLHttpRequest();
+							 	 // store the URI to access the API to an constant, and concatinate with prameters passed
          			var baseURL = "https://api.openweathermap.org/data/2.5/weather?q="+place+"&APPID=08186312a5a64c7bc1c004cd32050ebf&units=metric"
-         			var data;
+         			var data; // Next use GET method to read data from the API though the URI
          			xhr.open("GET", baseURL);
          			xhr.send();
-							
-         				xhr.onreadystatechange = function() {
+							xhr.onreadystatechange = function() {
 										if (this.readyState !== 404 && this.status == 200) {
 									  		data = JSON.parse(this.responseText);  // parsing the response tect to an object
 												document.getElementById("temp-data").innerHTML =`<h6><b>Temp in celsius today is</b> ${data.main.temp}</h6>` ;

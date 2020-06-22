@@ -48,6 +48,18 @@
          background-color: #42AEEC;
          color: #fff;
          }
+		// to fix the card and footer as page content. vh which is relative sixe is used to have it responsive		 
+					.signinform{
+      align-items: center;
+      justify-content: center;
+			position: relative;
+		   min-height: 78vh;
+      }
+
+			#footer-details
+			{
+				 position: absolute;
+  				}
       </style>
    </head>
    <body>
@@ -79,9 +91,9 @@
             </div>
          </nav>
       </header>
-      <div class="container">
+      <div class="container signinform">
          <br> 
-         <div class="card bg-light">
+         <div class="card bg-light ">
             <article class="card-body mx-auto" style="max-width: 400px;">
                <h4 class="card-title mt-3 text-center">Create Account</h4>
                <p class="text-center">Get started with your free account</p>
@@ -156,9 +168,9 @@
          </div>
          <!-- card.// -->
       </div>
-      <!--container end.//-->
-      <footer class="container-fluid">
-         <div id="footer-details" class="row">
+      <!--container body of from end.//-->
+      <footer class="container-fluid"  id="footer-details">
+         <div class="row">
             <div class="col-sm-4">
                <h4 class="uppercase general-sub">About</h4>
                <p class="inline-block footertext">Travel Agent since more than a decade, helped thousands of travellers cherish a safe and wonderful holiday.</p>
