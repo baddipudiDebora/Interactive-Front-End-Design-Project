@@ -1,6 +1,7 @@
 image:
   file: .gitpod.dockerfile
 tasks:
+ - init: gem install jekyll bundler
  - init: . ${GITPOD_REPO_ROOT}/.theia/init_tasks.sh    
 vscode:
   extensions:
