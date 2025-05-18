@@ -1,28 +1,21 @@
-name: Selenium Java Tests
-on: [push]
+name: Run Selenium Tests
+
+on: push
 
 jobs:
-  selenium-tests:
+  test:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout repository
+      - name: Checkout Repository
         uses: actions/checkout@v3
-
-      - name: Set up Java
-        uses: actions/setup-java@v3
-        with:
-          distribution: 'temurin'
-          java-version: '17'  # Adjust Java version as needed
-
-      - name: Install Selenium dependencies
+        
+      - name: Clone Selenium Repo
         run: |
-              wget https://github.com/SeleniumHQ/selenium/releases/download/selenium-4.0.0/selenium-java-4.0.0.zip
-              unzip -o selenium-java-4.0.0.zip -d selenium-lib
+          set -x  # Enables command logging
+          git clone https://github.com/baddipudiDebora/Combination-of-Single_Responsibility_Model_and_Strategy_DesignPattern_demo.git
           
-      - name: Debug - List Files
-        run: ls -l
-
-      - name: Compile and Run Selenium Test
+      - name: Run Selenium Tests
         run: |
-          javac -cp "Testing/Automation Testing/InterativeForntEnd/libs/*:." Testing/Automation\ Testing/InterativeForntEnd/src/sanity/AppLoadingTest.java
-          java -cp "Testing/Automation Testing/InterativeForntEnd/libs/*:." sanity.AppLoadingTest
+          set -x  # Enables command logging
+          cd Combination-of-Single_Responsibility_Model_and_Strategy_DesignPattern_demo
+          mvn test
