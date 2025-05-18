@@ -19,7 +19,7 @@ public class AppLoadingTest {
 		// 1) Open the browser // 2) Maximize it // 3) Navigate to the app
 		System.setProperty("webdriver.chrome.driver", "chromedriver.exe");
 		driver.manage().window().maximize();
-		driver.get("https://interactive-front-end-design-project--deborahbs.repl.co/");
+		driver.get("https://baddipudidebora.github.io/Interactive-Front-End-Design-Project/");
 		driver.switchTo().alert().accept();
 	}
 
