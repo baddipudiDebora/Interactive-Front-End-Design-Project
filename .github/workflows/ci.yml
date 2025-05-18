@@ -14,12 +14,10 @@ jobs:
           set -x  # Enables command logging
           git clone https://github.com/baddipudiDebora/Combination-of-Single_Responsibility_Model_and_Strategy_DesignPattern_demo.git
 
-      - name: clean 
-        run: | 
-          mvn clean compile
-
       - name: Run Selenium Tests
         run: |
+          set -x # clean 
+          mvn clean compile
           set -x  # Enables command logging
           cd Combination-of-Single_Responsibility_Model_and_Strategy_DesignPattern_demo
           mvn test
