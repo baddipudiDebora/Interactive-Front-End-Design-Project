@@ -1,19 +1,26 @@
-name: Run Selenium Tests
+name: Selenium Tests
 
-on: push
+on:
+  push:
+    branches:
+      - main
 
 jobs:
   test:
     runs-on: ubuntu-latest
+
     steps:
-      - name: Checkout Repository
+      - name: Checkout UI repository
         uses: actions/checkout@v3
-        
+
+      - name: Clone the test repository
+        run: git clone https://github.com/baddipudiDebora/Combination-of-Single_Responsibility_Model_and_Strategy_DesignPattern_demo.git
+
       - name: Set up Java
         uses: actions/setup-java@v3
         with:
-          java-version: '21'  # Ensure the required Java version is installed
           distribution: 'temurin'
+          java-version: '11'
 
       - name: Install Selenium IDE Runner
         run: npm install -g selenium-side-runner
@@ -24,16 +31,12 @@ jobs:
           npm install -g edgedriver
           npm install -g geckodriver
 
-      - name: Install dependencies
-        run: mvn install
-
-      - name: Clone Selenium Repo
+      - name: Install dependencies in test repo
         run: |
-          set -x  # Enables command logging
-          git clone https://github.com/baddipudiDebora/Combination-of-Single_Responsibility_Model_and_Strategy_DesignPattern_demo.git
-
-      - name: Run Selenium Tests
-        run: |
-          set -x  # Enables command logging
           cd Combination-of-Single_Responsibility_Model_and_Strategy_DesignPattern_demo
-          mvn test
+          mvn install
+
+      - name: Run Selenium tests
+        run: |
+          cd Combination-of-Single_Responsibility_Model_and_Strategy_DesignPattern_demo
+          mvn clean test
